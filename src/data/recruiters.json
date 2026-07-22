@@ -1,0 +1,92 @@
+{
+  "recruiterRequirements": {
+    "jobMetaData": {
+      "jobTitle": "Frontend Engineer",
+      "industry": "Software Engineering",
+      "location": {
+        "city": "Remote",
+        "country": "Worldwide"
+      },
+      "workAuthorizationRequired": false
+    },
+    "categoryWeightsPercent": {
+      "skillsMatch": 20,
+      "relevantExperience": 20,
+      "education": 10,
+      "certifications": 5,
+      "projectsAndPortfolio": 10,
+      "achievements": 10,
+      "employmentStability": 5,
+      "leadership": 5,
+      "communication": 5,
+      "jobFit": 10
+    },
+    "criteria": {
+      "skillsMatch": {
+        "technical": [
+          { "name": "React", "priorityScore": 5, "isRequired": true },
+          { "name": "TypeScript", "priorityScore": 5, "isRequired": true },
+          { "name": "Node.js", "priorityScore": 3, "isRequired": false }
+        ],
+        "toolsAndFrameworks": [
+          { "name": "Git", "priorityScore": 3, "isRequired": true },
+          { "name": "Docker", "priorityScore": 2, "isRequired": false }
+        ],
+        "softSkills": [
+          { "name": "Problem Solving", "priorityScore": 2, "isRequired": false }
+        ]
+      },
+      "relevantExperience": {
+        "minYearsTotal": 3.0,
+        "targetJobTitles": [
+          { "title": "Frontend Engineer", "priorityScore": 10 },
+          { "title": "Software Developer", "priorityScore": 6 }
+        ],
+        "priorityScore": 20
+      },
+      "education": {
+        "requiredDegree": "Bachelor",
+        "preferredFields": [
+          "Computer Science",
+          "Software Engineering",
+          "Mechatronics Engineering"
+        ],
+        "minGpa": "3.0/4",
+        "priorityScore": 10
+      },
+      "certifications": {
+        "preferredCertifications": [
+          { "name": "AWS Certified Developer", "priorityScore": 5 }
+        ]
+      },
+      "projectsAndPortfolio": {
+        "requireLiveLinkOrRepo": true,
+        "preferredTechnologies": ["React", "TypeScript"],
+        "priorityScore": 10
+      },
+      "achievements": {
+        "requireQuantifiableMetrics": true,
+        "priorityScore": 10
+      },
+      "employmentStability": {
+        "maxAcceptableGapMonths": 6,
+        "priorityScore": 5
+      },
+      "leadership": {
+        "lookForMentorship": true,
+        "lookForProjectOwnership": true,
+        "priorityScore": 5
+      },
+      "communication": {
+        "requireCleanFormatting": true,
+        "zeroGrammarTolerance": false,
+        "priorityScore": 5
+      },
+      "jobFit": {
+        "preferredWorkType": "Remote",
+        "requiredLanguages": ["English"],
+        "priorityScore": 10
+      }
+    }
+  }
+}
