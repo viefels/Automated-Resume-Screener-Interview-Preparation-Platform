@@ -1,0 +1,19 @@
+{
+  "evaluationSummary": {
+    "candidateName": "Candidate Name",
+    "totalScore": 87,
+    "maxScore": 100,
+    "breakdown": {
+      "skillsMatch": {"score": 15, "max": 20, "notes": "Missing GraphQL and Docker from preferred list"},
+      "relevantExperience": {"score": 20, "max": 20, "notes": "4 years relevant frontend experience exceeds 3-year minimum"},
+      "education": {"score": 9, "max": 10, "notes": "Engineering degree closely aligned"},
+      "certifications": {"score": 5, "max": 5, "notes": "AWS certification matches criteria"},
+      "projectsAndPortfolio": {"score": 10, "max": 10, "notes": "Live projects demonstrate required React stack"},
+      "achievements": {"score": 9, "max": 10, "notes": "Strong metrics included (42% speed boost)"},
+      "employmentStability": {"score": 4, "max": 5, "notes": "Solid tenure, minor gap explained by education"},
+      "leadership": {"score": 4, "max": 5, "notes": "Demonstrated mentorship experience"},
+      "communication": {"score": 5, "max": 5, "notes": "Well-formatted text with zero structural issues"},
+      "jobFit": {"score": 6, "max": 10, "notes": "Location and domain match, but requires visa sponsorship"}
+    }
+  }
+}
