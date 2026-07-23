@@ -1,10 +1,11 @@
 import express from "express";
 import uploadRoute from "./src/routes/mainRoute.js";
+import { configDotenv } from "dotenv";
 
 
 // const filePathWrite = path.join(import.meta.dirname,"src","data","data.json");
-const port = "3000";
-const hostname = '127.0.0.1';
+const port = process.env.PORT;
+const hostname = process.env.IP;
 const app = express();
 
 app.use(express.json())

@@ -1,4 +1,5 @@
 import path from "node:path";
+import fs from "node:fs/promises";
 import handlePromptRes from '../prompts/handlePromptRes.js';
 import  extractText from '../utils/parsers.js';
 import { candidateStructure } from '../prompts/parseJSONStructure.js';
@@ -28,6 +29,7 @@ export default async function uploadRouteCall(req, res) {
             { "text": `Source Text:\n${extractedTextVal}`}]
         
         const candidateObj = await handlePromptRes(prompt); 
+        // await fs.writeFile(path.join(import.meta.dirname, "../data/candidates.json"), JSON.stringify(candidateObj, null, 2));
         return res.status(200).json({
             message: "File Uploaded Successfully: ",
             filename: req.file.filename,
@@ -37,7 +39,7 @@ export default async function uploadRouteCall(req, res) {
         });
     }
     catch(err){
-
+        console.log(err.message)
         throw err;
     }
     

@@ -3,9 +3,8 @@
   "candidate": {
     "basics": {
       "fullName": "Candidate Name",
-      "headline": "Job Title or Primary Role",
       "email": "candidate@example.com",
-      "phone":[{"phone1": "+20110281900"}],
+      "phone":[{"phone1": "+20110281900"}], //two phone object max
       "nationality": ["American", "Congolese"],
       "dob": "21/08/1980",
       "maritalStatus": "Single",
@@ -36,10 +35,6 @@
       "toolsAndFrameworks": [
         "Tool 1",
         "Tool 2"
-      ],
-      "softSkills": [
-        "Skill 1",
-        "Skill 2"
       ]
     },
     "workExperience": [
