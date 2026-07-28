@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.post("/resumes", validateResumeData, handleForm);
 
-router.post("/resumes", validateResumeData, handleForm);
+
 
 router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 

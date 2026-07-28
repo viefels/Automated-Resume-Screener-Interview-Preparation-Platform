@@ -47,10 +47,12 @@ export default function validateResumeData(req, res, next){
             "summary": stringTrim.min(5, "Please enter at least 5 words").nullish(),
             "totalYearsExperience": z.number("Please enter a valid number").positive("Must be positive number").min(1, "Please enter a valid number").max(99, "Please enter a valid number")
         }),
+
         "skills": z.object({
-            "technical": z.array(stringTrim).nonempty(),
+            "technical": z.array(stringTrim).nonempty("Please enter at least sne skill"),
             "toolsAndFrameworks": z.array(stringTrim).nullish(),
         },"Please provide a valid value"),
+
         "workExperience": z.array(z.object(
         {
             "jobTitle": stringTrim,
@@ -60,6 +62,7 @@ export default function validateResumeData(req, res, next){
             "endDate": stringTrim.nullish(),
             "highlights": z.array(stringTrim).nullish()
         },"Please provide a valid value")),
+
         "education": z.array(z.object(
         {
             "degree": stringTrim,
@@ -69,7 +72,8 @@ export default function validateResumeData(req, res, next){
             "endDate": stringTrim.nullish(),
             "honors": stringTrim.nullish(),
             "gpa": stringTrim.nullish()
-        },"Please provide a valid value")).nonempty(),
+        },"Please provide a valid value")),
+
         "projects": z.array(z.object(
         {
             "name": stringTrim,
@@ -77,12 +81,14 @@ export default function validateResumeData(req, res, next){
             "technologiesUsed": z.array(stringTrim).nullish(),
             "link": stringTrim.nullish()
         },"Please provide a valid value")).nullish(),
+
         "certifications": z.array(z.object({
             "title": stringTrim,
             "issuer": stringTrim.nullish(),
             "issueDate": stringTrim.nullish()
         },"Please provide a valid value")).nullish()
         ,
+
         "languages": z.array(z.object(
         {
             "language": stringTrim,
@@ -94,10 +100,24 @@ export default function validateResumeData(req, res, next){
     const result = candidateSchema.safeParse(candidateData);
     // console.log(typeof candidateData)
     if(!result.success){
+        const getNestedErrors = (error) => {
+            const formattedErrors = {};
+
+            for (const issue of error.issues) {
+                const path = issue.path.join('.'); 
+                if (!formattedErrors[path]) {
+                formattedErrors[path] = [];
+                }
+                formattedErrors[path].push(issue.message);
+            }
+
+            return formattedErrors;
+        };
+
         return res.status(400).json({
             success: false,
             message: 'Validation failed for candidate payload',
-            errors: result.error.flatten()
+            errors: getNestedErrors(result.error)
       });
     }
     

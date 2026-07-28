@@ -19,13 +19,13 @@ const storageOptions = {
 }
 
 const fileFilterOptions = (req, file, cb) => {
-    const allowedExt = ['.pdf', '.docx', ".mp4"];
+    const allowedExt = ['.pdf', '.docx'];
     const extName = path.extname(file.originalname).toLowerCase();
     if(allowedExt.includes(extName)){
         cb(null,true);
     }
     else{
-        cb(new ValidationError(`File type not supported, Only ${allowedExt.join(",")} are allowed`), false);
+        cb(new ValidationError(`File type not supported, Only ${allowedExt.join(", ")} are allowed`), false);
     }
 }
 
