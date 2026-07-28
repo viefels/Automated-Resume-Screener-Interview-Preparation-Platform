@@ -1,8 +1,8 @@
 import path from "node:path";
 import fs from "node:fs/promises";
-import handlePromptRes from '../prompts/handlePromptRes.js';
+import handlePromptRes from '../prompts/handle_prompt_res.prompts.js';
 import  extractText from '../utils/parsers.js';
-import { candidateStructure } from '../prompts/parseJSONStructure.js';
+import { candidateStructure } from "../prompts/candidate_structure.prompts.js";
 
 const systemPrompt = `
     You are a CV parser. Extract information from the raw resume text into JSON format.

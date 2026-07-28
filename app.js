@@ -1,5 +1,5 @@
 import express from "express";
-import uploadRoute from "./src/routes/mainRoute.js";
+import uploadRoute from "./src/routes/main.route.js";
 import { configDotenv } from "dotenv";
 
 

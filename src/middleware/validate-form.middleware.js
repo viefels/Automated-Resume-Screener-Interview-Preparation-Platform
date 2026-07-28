@@ -2,7 +2,7 @@ import {z} from "zod";
 import express from "express"
 
 //middleware
-//returns bool
+//update req
 export default function validateResumeData(req, res, next){
     
     const candidateData = req.body;
