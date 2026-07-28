@@ -1,16 +1,18 @@
 import express from "express";
 import multer from "multer";
-import upload,{ ValidationError } from "../middleware/multerMiddleware.js";
-import uploadRouteCall from "../controllers/uploadRouteCall.js";
-import handleForm from "../controllers/handleCandidateForm.js";
-import validateResumeData from "../middleware/validateResumeForm.js";
+import upload,{ ValidationError } from "../middleware/multer.middleware.js";
+import uploadRouteCall from "../controllers/upload.controller.js";
+import handleForm from "../controllers/handle_resume_form.controller..js";
+import validateResumeData from "../middleware/validate-form.middleware.js";
 
 
 const router = express.Router();
 
-router.post("/resume", validateResumeData, handleForm);
+router.post("/resumes", validateResumeData, handleForm);
 
-router.post("/resume/upload", upload.single('file'), uploadRouteCall);
+
+
+router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 
 
 
