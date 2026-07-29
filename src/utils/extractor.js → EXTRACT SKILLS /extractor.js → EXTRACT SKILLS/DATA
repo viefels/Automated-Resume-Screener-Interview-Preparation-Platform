@@ -1,0 +1,14 @@
+const extractData = (text) => {
+  const skills = ["javascript", "node", "react", "python"];
+
+  const foundSkills = skills.filter(skill =>
+    text.toLowerCase().includes(skill)
+  );
+
+  return {
+    skills: foundSkills,
+    length: text.length
+  };
+};
+
+module.exports = { extractData };
