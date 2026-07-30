@@ -1,4 +1,4 @@
-const extractData = (text) => {
+export const extractData = (text) => {
   const skills = ["javascript", "node", "react", "python"];
 
   const foundSkills = skills.filter(skill =>
@@ -10,5 +10,3 @@ const extractData = (text) => {
     length: text.length
   };
 };
-
-module.exports = { extractData };
