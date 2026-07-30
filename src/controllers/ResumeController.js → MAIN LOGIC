@@ -1,7 +1,7 @@
-const { parseFile } = require('../utils/parser');
-const { extractData } = require('../utils/extractor');
+import { parseFile } from '../utils/parser.js';
+import { extractData } from '../utils/extractor.js';
 
-const uploadResume = async (req, res) => {
+export const uploadResume = async (req, res) => {
   try {
     const filePath = req.file.path;
 
@@ -17,5 +17,3 @@ const uploadResume = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-
-module.exports = { uploadResume };
