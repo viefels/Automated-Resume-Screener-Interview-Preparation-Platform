@@ -2,15 +2,21 @@ import express from "express";
 import multer from "multer";
 import upload,{ ValidationError } from "../middleware/multer.middleware.js";
 import uploadRouteCall from "../controllers/upload.controller.js";
-import handleForm from "../controllers/handle_resume_form.controller..js";
+import handleForm from "../controllers/handle_resume_form.controller.js";
 import validateResumeData from "../middleware/validate-form.middleware.js";
+import * as userMiddleware from "../middleware/auth.middleware.js";
+import * as userController from "../controllers/auth.controller.js";
+
 
 
 const router = express.Router();
 
-router.post("/resumes", validateResumeData, handleForm);
+router.post("/resumes", userMiddleware.verifyToken, validateResumeData, handleForm);
 
 
+router.post("/register", userMiddleware.validateUserDetails, userController.register);
+
+router.post("/login", userMiddleware.validateUserDetails, userController.login);
 
 router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 
@@ -19,13 +25,19 @@ router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 router.use((err, req, res, next) => {
     if (err instanceof multer.MulterError) {
         if (err.code === 'LIMIT_FILE_SIZE') {
-            return res.status(400).json({ error: 'File size exceeds the 5MB limit.' });
+            return res.status(400).json({ 
+                success:false,
+                error: 'File size exceeds the 5MB limit.' 
+            });
         }
 
     return res.status(400).json({ error: 'File upload failed.' });
     } else if (err instanceof ValidationError || err.name === "ValidationError") {
 
-        return res.status(400).json({ error: err.message });
+        return res.status(400).json({ 
+            success:false, 
+            error: err.message 
+        });
         
     } else if(err){
         return res.status(500).json({
