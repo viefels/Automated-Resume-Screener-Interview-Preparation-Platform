@@ -1,144 +1,149 @@
-[{
-  "basics": {
-    "fullName": "OLIVEIRA MIGUEL ANGEL",
-    "email": "olimiguel888@gmail.com",
-    "phone": [],
-    "nationality": [
-      "American"
-    ],
-    "dob": "10/21/1990",
-    "maritalStatus": "Single",
-    "location": {
-      "city": "ALTON",
-      "country": "United States"
-    },
-    "links": [],
-    "fullAddress": "3714 E HARDING AVE ALTON, Texas 78573",
-    "summary": "Highly motivated Data Scientist with expertise in machine learning, statistical modeling, and big data analytics, specializing in remote-based projects and international collaborations. Experienced in delivering data-driven insights for businesses in technology, finance, healthcare, and e-commerce sectors. Passionate about leveraging data to optimize operations, forecast trends, and build predictive models.",
-    "totalYearsExperience": 4.5
-  },
-  "skills": {
-    "technical": [
-      "Python",
-      "R",
-      "SQL",
-      "MATLAB",
-      "scikit-learn",
-      "TensorFlow",
-      "PyTorch",
-      "MySQL",
-      "PostgreSQL",
-      "MongoDB"
-    ],
-    "toolsAndFrameworks": [
-      "Tableau",
-      "Power BI",
-      "Matplotlib",
-      "Seaborn"
-    ]
-  },
-  "workExperience": [
-    {
-      "jobTitle": "Remote Data Scientist",
-      "company": "Freelance (Global Clients)",
-      "location": "Remote",
-      "startDate": "2022-01",
-      "endDate": "Present",
-      "highlights": [
-        "Delivered data-driven business insights for startups across North America, Europe, and Asia.",
-        "Developed and deployed machine learning models for customer segmentation, demand forecasting, and fraud detection.",
-        "Built interactive dashboards and data visualization reports using Power BI and Tableau.",
-        "Increased business efficiency for clients by up to 30% through data-informed recommendations."
-      ]
-    },
-    {
-      "jobTitle": "Junior Data Scientist",
-      "company": "Texas FinTech Solutions",
-      "location": "Austin",
-      "startDate": "2020-06",
-      "endDate": "2021-12",
-      "highlights": [
-        "Assisted in credit risk modeling using logistic regression and random forest.",
-        "Conducted real-time transaction data analysis to detect anomalies and fraud cases.",
-        "Implemented data pipelines for ETL processes using Python and SQL.",
-        "Collaborated remotely with cross-border teams for predictive analytics projects."
-      ]
-    },
-    {
-      "jobTitle": "Data Analyst Intern",
-      "company": "North America Digital Research Hub",
-      "location": "Houston",
-      "startDate": "2019-08",
-      "endDate": "2020-05",
-      "highlights": [
-        "Performed exploratory data analysis (EDA) on large datasets.",
-        "Cleaned, pre-processed, and structured raw data for modeling.",
-        "Prepared monthly reports on consumer digital behavior.",
-        "Presented insights to researchers and partner companies."
-      ]
-    }
-  ],
-  "education": [
-    {
-      "degree": "Bachelor of Science",
-      "fieldOfStudy": "Data Science & Big Data Analytics",
-      "institution": "University of Texas at Austin (UT Austin)",
-      "startDate": "2017",
-      "endDate": "2021",
-      "honors": null,
-      "gpa": "3.85/4.0"
-    }
-  ],
-  "projects": [
-    {
-      "name": "E-Commerce Sales Forecasting",
-      "description": "Built a time-series forecasting model (ARIMA, Prophet) to predict monthly sales. Helped an e-commerce client improve inventory management and reduce overstock by 18%.",
-      "technologiesUsed": [
-        "ARIMA",
-        "Prophet"
+[
+  {
+    "basics": {
+      "fullName": "OLIVEIRA MIGUEL ANGEL",
+      "email": "olimiguel888@gmail.com",
+      "phone": [],
+      "nationality": [
+        "American"
       ],
-      "link": null
+      "dob": "10/21/1990",
+      "maritalStatus": "Single",
+      "location": {
+        "city": "ALTON",
+        "country": "United States"
+      },
+      "links": [],
+      "fullAddress": "3714 E HARDING AVE ALTON, Texas 78573",
+      "summary": "Highly motivated Data Scientist with expertise in machine learning, statistical modeling, and big data analytics, specializing in remote-based projects and international collaborations. Experienced in delivering data-driven insights for businesses in technology, finance, healthcare, and e-commerce sectors. Passionate about leveraging data to optimize operations, forecast trends, and build predictive models.",
+      "totalYearsExperience": 4.5
     },
-    {
-      "name": "Healthcare Predictive Analytics",
-      "description": "Collaborated with a remote healthcare startup to develop a predictive model for patient readmission. Used Python (scikit-learn, XGBoost) to improve accuracy to 92%.",
-      "technologiesUsed": [
+    "skills": {
+      "technical": [
         "Python",
+        "R",
+        "SQL",
+        "MATLAB",
         "scikit-learn",
-        "XGBoost"
+        "TensorFlow",
+        "PyTorch",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
       ],
-      "link": null
+      "toolsAndFrameworks": [
+        "Tableau",
+        "Power BI",
+        "Matplotlib",
+        "Seaborn"
+      ]
     },
-    {
-      "name": "Fraud Detection Model",
-      "description": "Designed a real-time fraud detection system for a fintech company. Reduced false positives by 25%, saving operational costs.",
-      "technologiesUsed": [],
-      "link": null
-    },
-    {
-      "name": "Social Media Sentiment Analysis",
-      "description": "Scraped and analyzed Twitter and Facebook data for brand monitoring. Conducted NLP-based sentiment analysis with Python's NLTK and spaCy.",
-      "technologiesUsed": [
-        "Python",
-        "NLTK",
-        "spaCy"
-      ],
-      "link": null
-    }
-  ],
-  "certifications": [],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native"
-    },
-    {
-      "language": "Spanish",
-      "fluency": "Fluent"
-    },
-    {
-      "language": "Japanese",
-      "fluency": "Intermediate"
-    }
-  ]
-}]
+    "workExperience": [
+      {
+        "jobTitle": "Remote Data Scientist",
+        "company": "Freelance (Global Clients)",
+        "location": "Remote",
+        "startDate": "2022-01",
+        "endDate": "Present",
+        "highlights": [
+          "Delivered data-driven business insights for startups across North America, Europe, and Asia.",
+          "Developed and deployed machine learning models for customer segmentation, demand forecasting, and fraud detection.",
+          "Built interactive dashboards and data visualization reports using Power BI and Tableau.",
+          "Increased business efficiency for clients by up to 30% through data-informed recommendations."
+        ]
+      },
+      {
+        "jobTitle": "Junior Data Scientist",
+        "company": "Texas FinTech Solutions",
+        "location": "Austin",
+        "startDate": "2020-06",
+        "endDate": "2021-12",
+        "highlights": [
+          "Assisted in credit risk modeling using logistic regression and random forest.",
+          "Conducted real-time transaction data analysis to detect anomalies and fraud cases.",
+          "Implemented data pipelines for ETL processes using Python and SQL.",
+          "Collaborated remotely with cross-border teams for predictive analytics projects."
+        ]
+      },
+      {
+        "jobTitle": "Data Analyst Intern",
+        "company": "North America Digital Research Hub",
+        "location": "Houston",
+        "startDate": "2019-08",
+        "endDate": "2020-05",
+        "highlights": [
+          "Performed exploratory data analysis (EDA) on large datasets.",
+          "Cleaned, pre-processed, and structured raw data for modeling.",
+          "Prepared monthly reports on consumer digital behavior.",
+          "Presented insights to researchers and partner companies."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science",
+        "fieldOfStudy": "Data Science & Big Data Analytics",
+        "institution": "University of Texas at Austin (UT Austin)",
+        "startDate": "2017",
+        "endDate": "2021",
+        "honors": null,
+        "gpa": "3.85/4.0"
+      }
+    ],
+    "projects": [
+      {
+        "name": "E-Commerce Sales Forecasting",
+        "description": "Built a time-series forecasting model (ARIMA, Prophet) to predict monthly sales. Helped an e-commerce client improve inventory management and reduce overstock by 18%.",
+        "technologiesUsed": [
+          "ARIMA",
+          "Prophet"
+        ],
+        "link": null
+      },
+      {
+        "name": "Healthcare Predictive Analytics",
+        "description": "Collaborated with a remote healthcare startup to develop a predictive model for patient readmission. Used Python (scikit-learn, XGBoost) to improve accuracy to 92%.",
+        "technologiesUsed": [
+          "Python",
+          "scikit-learn",
+          "XGBoost"
+        ],
+        "link": null
+      },
+      {
+        "name": "Fraud Detection Model",
+        "description": "Designed a real-time fraud detection system for a fintech company. Reduced false positives by 25%, saving operational costs.",
+        "technologiesUsed": [],
+        "link": null
+      },
+      {
+        "name": "Social Media Sentiment Analysis",
+        "description": "Scraped and analyzed Twitter and Facebook data for brand monitoring. Conducted NLP-based sentiment analysis with Python's NLTK and spaCy.",
+        "technologiesUsed": [
+          "Python",
+          "NLTK",
+          "spaCy"
+        ],
+        "link": null
+      }
+    ],
+    "certifications": [],
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "Native"
+      },
+      {
+        "language": "Spanish",
+        "fluency": "Fluent"
+      },
+      {
+        "language": "Japanese",
+        "fluency": "Intermediate"
+      }
+    ],
+    "id": "user-1785454817931",
+    "hasResume": true,
+    "updatedAt": "2026-07-31T00:36:22.430Z"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "user-1711982400000",
+    "email": "alex.morgan@example.com",
+    "passwordHash": "$2b$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vj.z/pB1gO",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-04-01T12:00:00.000Z"
+  },
+  {
+    "id": "user-1711982405000",
+    "email": "jordan.lee@example.com",
+    "passwordHash": "$2b$10$89f/a1fX3a0M4kR0A1R23e.G0XyZ1W2V3U4T5S6R7Q8P9O0N1M2L",
+    "role": "recruiter",
+    "hasCv": false,
+    "createdAt": "2026-04-01T12:00:05.000Z"
+  },
+  {
+    "id": "user-1711982410000",
+    "email": "sam.taylor@example.com",
+    "passwordHash": "$2b$10$v73Jz8K9L0M1N2O3P4Q5Re6S7T8U9V0W1X2Y3Z4A5B6C7D8E9F0G1",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-04-01T12:00:10.000Z"
+  },
+  {
+    "id": "user-1785454817931",
+    "email": "alex@example.com",
+    "passwordHash": "$2b$10$IlsMdrCZgTAENgZVbJofzOF/GHQ8SB/1IUpSdpT.muy0lrqXzaotS",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-07-30T23:40:17.931Z"
+  },
+  {
+    "id": "user-1785455997534",
+    "email": "ale@example.com",
+    "passwordHash": "$2b$10$i9EpngzVJdaECHNDQYhiVOGSjRXKWr6TVK6.JWpk3EWyD/WtveofK",
+    "role": "recruiter",
+    "createdAt": "2026-07-30T23:59:57.534Z"
+  }
+]
