@@ -1,7 +1,7 @@
 import express from "express"
 import path from "node:path"; 
 import jwt from "jsonwebtoken"
-import z from "zod";
+import z, { success } from "zod";
 import { configDotenv } from "dotenv";
 configDotenv({ path: "../../.env" });
 
@@ -67,10 +67,16 @@ export function verifyToken(req, res, next){
         next()
     }
     catch(err){
-        return res.status(400).json({
-            success: false,
-            error: "Access denied. Server failed to respond."
-        });
+        if (err.name === 'TokenExpiredError') {
+            return res.status(401).json({ 
+                success:false,
+                error: 'Token has expired, please log in again' 
+            });
+        }
+        
+        return res.status(403).json({ 
+            
+            error: 'Invalid token' });
     }
 
     

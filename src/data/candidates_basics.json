@@ -37,5 +37,13 @@
     "passwordHash": "$2b$10$i9EpngzVJdaECHNDQYhiVOGSjRXKWr6TVK6.JWpk3EWyD/WtveofK",
     "role": "recruiter",
     "createdAt": "2026-07-30T23:59:57.534Z"
+  },
+  {
+    "id": "user-539d4fd3-dc54-42a9-a476-4a6604b9199e",
+    "email": "aldqwi@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-07-31T16:25:37.530Z"
   }
 ]
