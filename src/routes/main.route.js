@@ -6,6 +6,7 @@ import handleForm from "../controllers/handle_resume_form.controller.js";
 import validateResumeData from "../middleware/validate-form.middleware.js";
 import * as userMiddleware from "../middleware/auth.middleware.js";
 import * as userController from "../controllers/auth.controller.js";
+import { createRecruiterJob, generateMockInterviewQuestions, matchCandidatesToJob } from "../controllers/recruiter.controller.js";
 
 
 
@@ -17,6 +18,10 @@ router.post("/resumes", userMiddleware.verifyToken, validateResumeData, handleFo
 router.post("/register", userMiddleware.validateUserDetails, userController.register);
 
 router.post("/login", userMiddleware.validateUserDetails, userController.login);
+
+router.post("/recruiter/jobs", userMiddleware.verifyToken, createRecruiterJob);
+router.post("/recruiter/mock-interview/questions", userMiddleware.verifyToken, generateMockInterviewQuestions);
+router.get("/recruiter/jobs/:jobId/match-candidates", userMiddleware.verifyToken, matchCandidatesToJob);
 
 router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 
