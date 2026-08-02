@@ -1,7 +1,7 @@
 import express from "express"
 import path from "node:path"; 
 import jwt from "jsonwebtoken"
-import z from "zod";
+import z, { success } from "zod";
 import { configDotenv } from "dotenv";
 import { verify } from "node:crypto";
 configDotenv({ path: "../../.env" });

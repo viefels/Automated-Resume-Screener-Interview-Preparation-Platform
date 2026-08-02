@@ -33,7 +33,7 @@ export async function register (req, res){
         const hashedPsw = await bcrypt.hash(password, 10);
 
         const user = {
-            id: `user-${Date.now()}`,
+            id: `user-${crypto.randomUUID()}`,
             email: email,
             passwordHash: hashedPsw,
             role: role,
