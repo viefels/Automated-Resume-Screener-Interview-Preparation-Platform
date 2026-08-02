@@ -94,8 +94,11 @@ export default function validateResumeData(req, res, next){
             "language": stringTrim,
             "fluency": stringTrim.nullish()
         }
-        ),"Please provide a valid value").nonempty("Please provide at least one language spoken")
-    })
+        ),"Please provide a valid value").nonempty("Please provide at least one language spoken"),
+        
+        "feedback": z.object()
+    
+        })
     })
     const result = candidateSchema.safeParse(candidateData);
     // console.log(typeof candidateData)

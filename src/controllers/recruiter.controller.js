@@ -5,26 +5,10 @@ import { promptAI } from "../prompts/handle_prompt_res.prompts.js";
 import { success } from "zod";
 
 const RECRUITER_JOBS_PATH = path.join(import.meta.dirname, "../data/jobs.json");
-const CANDIDATE_DATA_PATH = path.join(import.meta.dirname, "../data/candidates.json");
+const CANDIDATE_DATA_PATH = path.join(import.meta.dirname, "../data/candidates_resume.json");
 
 const recruiterJobs = JSON.parse(await fs.readFile(RECRUITER_JOBS_PATH, "utf8"));
 
-
-
-function normalizeText(value) {
-  return (value || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9+#.]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function extractKeywords(text) {
-  return normalizeText(text)
-    .split(" ")
-    .filter(Boolean)
-    .filter((word) => word.length > 2 && !["with", "from", "that", "this", "have", "been", "will", "the", "and", "for", "your", "role", "team", "build", "using", "work"].includes(word));
-}
 
 function scoreCandidateAgainstJob(job, candidate) {
   const jobText = `${job.jobTitle || ""} ${job.jobDescription || ""} ${(job.requirements || []).join(" ")}`;
@@ -73,8 +57,6 @@ export async function createRecruiterJob(req, res) {
         error: "jobTitle and jobDescription are required"
       });
     }
-    
-    
 
     const newJob = {
       id: String(recruiterJobs.length).padStart(3, "0"),
@@ -87,7 +69,20 @@ export async function createRecruiterJob(req, res) {
       location: payload.location || null,
       createdAt: new Date().toISOString()
     };
-    recruiterJobs.push(newJob)
+    
+
+    const prompt = [
+      {text: `Return keywords that will be used by fuse.js to score against candidates Resume, keywords includes skills and everything important in Job Descriptions Do not include markdown or any text outside the JSON object, Return valid JSON only with this exact structure:
+        {keywords:[]}`},
+      {text: `
+        Skills: ${newJob.primarySkills.join(", ")}
+        Job Description: ${newJob.jobDescription}`}
+    ]
+
+    const aiResponse = await promptAI(prompt);
+    newJob.keywords = aiResponse.keywords;
+    
+    recruiterJobs.push(newJob);
     await fs.writeFile(RECRUITER_JOBS_PATH, JSON.stringify(recruiterJobs, null, 2));
 
     return res.status(201).json({
@@ -115,7 +110,7 @@ export function getRecruiterJob(req, res) {
     }
     for(const job of recruiterJobs){
       if(job.recruiterId === recruiterId){
-        const {recruiterId, ...safeJob} = job;
+        const {recruiterId, id, keywords,  ...safeJob} = job;
         thisJobs.push(safeJob);
       }
     }

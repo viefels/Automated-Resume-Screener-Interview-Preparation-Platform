@@ -1,48 +1,79 @@
 [
   {
-    "id": "user-1711982400000",
-    "email": "alex.morgan@example.com",
-    "passwordHash": "$2b$10$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vj.z/pB1gO",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-04-01T12:00:00.000Z"
-  },
-  {
-    "id": "user-1711982405000",
-    "email": "jordan.lee@example.com",
-    "passwordHash": "$2b$10$89f/a1fX3a0M4kR0A1R23e.G0XyZ1W2V3U4T5S6R7Q8P9O0N1M2L",
-    "role": "recruiter",
-    "createdAt": "2026-04-01T12:00:05.000Z"
-  },
-  {
-    "id": "user-1711982410000",
-    "email": "sam.taylor@example.com",
-    "passwordHash": "$2b$10$v73Jz8K9L0M1N2O3P4Q5Re6S7T8U9V0W1X2Y3Z4A5B6C7D8E9F0G1",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-04-01T12:00:10.000Z"
-  },
-  {
-    "id": "user-1785454817931",
-    "email": "alex@example.com",
-    "passwordHash": "$2b$10$IlsMdrCZgTAENgZVbJofzOF/GHQ8SB/1IUpSdpT.muy0lrqXzaotS",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-07-30T23:40:17.931Z"
-  },
-  {
-    "id": "user-1785455997534",
-    "email": "ale@example.com",
-    "passwordHash": "$2b$10$i9EpngzVJdaECHNDQYhiVOGSjRXKWr6TVK6.JWpk3EWyD/WtveofK",
-    "role": "recruiter",
-    "createdAt": "2026-07-30T23:59:57.534Z"
-  },
-  {
-    "id": "user-539d4fd3-dc54-42a9-a476-4a6604b9199e",
-    "email": "aldqwi@example.com",
+    "id": "user-4a8f9b2c-1d3e-4f5a-6b7c-8d9e0f1a2b3c",
+    "email": "livingstone.isaac@example.com",
     "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
     "role": "candidate",
     "hasCv": false,
-    "createdAt": "2026-07-31T16:25:37.530Z"
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-a8b2c3d4-e5f6-4789-9a1b-2c3d4e5f6a7b",
+    "email": "sarah.chen@techrecruiters.co",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "recruiter",
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-b9c3d4e5-f6a7-4890-a1b2-3c4d5e6f7a8b",
+    "email": "david.smith@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-c0d4e5f6-a7b8-4901-b2c3-4d5e6f7a8b9c",
+    "email": "emily.davis@talentgroup.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "recruiter",
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-d1e5f6a7-b8c9-4012-c3d4-5e6f7a8b9c0d",
+    "email": "michael.brown@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-e2f6a7b8-c9d0-4123-d4e5-6f7a8b9c0d1e",
+    "email": "jessica.taylor@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-f3a7b8c9-d0e1-4234-e5f6-7a8b9c0d1e2f",
+    "email": "marcus.vance@apexhires.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "recruiter",
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-a4b8c9d0-e1f2-4345-f6a7-8b9c0d1e2f3a",
+    "email": "hannah.wilson@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-08-02T11:15:00.000Z",
+    "hasResume": true
+  },
+  {
+    "id": "user-b5c9d0e1-f2a3-4456-a7b8-9c0d1e2f3a4b",
+    "email": "james.martinez@example.com",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "candidate",
+    "hasCv": false,
+    "createdAt": "2026-08-02T11:15:00.000Z"
+  },
+  {
+    "id": "user-c6d0e1f2-a3b4-4567-b8c9-0d1e2f3a4b5c",
+    "email": "claire.dubois@globalstaffing.org",
+    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "role": "recruiter",
+    "createdAt": "2026-08-02T11:15:00.000Z"
   }
 ]

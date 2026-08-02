@@ -43,7 +43,7 @@ export function validateUserDetails(req, res, next){
     next()
 }
 
-export function verifyToken(req, res, next){
+export function isAuthenticated(req, res, next){
     const authHeader = req.headers["authorization"] || req.headers["Authorization"];
     if(!authHeader || !authHeader.startsWith("Bearer ")){
         return res.status(400).json({
@@ -72,7 +72,7 @@ export function verifyToken(req, res, next){
 
 }
 
-export function verifyRecruiter(req, res, next){
+export function isRecruiter(req, res, next){
     const payLoad = req.user;
 
     if (req.user.role !== "recruiter") {
@@ -84,7 +84,7 @@ export function verifyRecruiter(req, res, next){
     next();
 }
 
-export function verifyCandidate(req, res, next){
+export function isCandidate(req, res, next){
     const payLoad = req.user;
 
     if (req.user.role !== "candidate") {

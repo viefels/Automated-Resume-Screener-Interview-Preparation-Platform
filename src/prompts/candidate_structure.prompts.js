@@ -85,7 +85,28 @@
         "language": "Language Name",
         "fluency": "Proficiency level"
       }
-    ]
+    ],
+    "feedback": {
+      "targetRole": "Senior Product Designer",
+      "overallMatch": {
+        "score": "%",
+        "remarks": "Good match for mid-to-senior design roles",
+        "sectionScores": {
+          "formatting": "%",
+          "keywords": "%",
+          "actionVerbs": "%"
+        }
+      },
+      "keyHighlights": [
+        "Excellent visual hierarchy & systems",
+        "5+ years experience in Figma"
+      ],
+      "actionableFeedback": [
+        "Quantify achievements with metrics",
+        "Add cross-functional collab details",
+        "Include design system governance"
+      ]
+    }
   }
 }
 

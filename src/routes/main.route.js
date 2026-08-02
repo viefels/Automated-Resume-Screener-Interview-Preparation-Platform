@@ -10,7 +10,11 @@ import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } f
 
 
 
+
 const router = express.Router();
+router.get("/", (req,res)=>{
+    return res.status(404).send("404 not found")
+});
 
 
 //auth
@@ -18,14 +22,15 @@ router.post("/register", user.validateUserDetails, userController.register);
 router.post("/login", user.validateUserDetails, userController.login);
 
 //candidate
-router.post("/resumes", user.verifyToken,user.verifyCandidate, validateResumeData, handleForm);
-router.post("/resumes/me/file", user.verifyToken, user.verifyCandidate, upload.single('file'), uploadRouteCall);
+router.post("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
+router.post("/candidate/resume/file", user.isAuthenticated, user.isCandidate, upload.single('file'), uploadRouteCall);
+router.get("/candidate/resume/feedback", user.isAuthenticated, user.isCandidate);
 
 //recruiter
-router.post("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, createRecruiterJob);
-router.get("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, getRecruiterJob);
-router.get("/recruiter/jobs/:jobId/questions", user.verifyToken, user.verifyRecruiter, generateMockInterviewQuestions);
-// router.get("/recruiter/jobs/:jobId/match-candidates", user.verifyToken, matchCandidatesToJob);
+router.post("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, createRecruiterJob);
+router.get("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, getRecruiterJob);
+router.get("/recruiter/jobs/:jobId/questions", user.isAuthenticated, user.isRecruiter, generateMockInterviewQuestions);
+// router.get("/recruiter/jobs/:jobId/match-candidates", user.isAuthenticated, matchCandidatesToJob);
 
 
 
