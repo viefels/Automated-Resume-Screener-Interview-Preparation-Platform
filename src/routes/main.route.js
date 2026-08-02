@@ -12,19 +12,22 @@ import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } f
 
 const router = express.Router();
 
-router.post("/resumes", user.verifyToken, validateResumeData, handleForm);
 
-
+//auth
 router.post("/register", user.validateUserDetails, userController.register);
-
 router.post("/login", user.validateUserDetails, userController.login);
 
+//candidate
+router.post("/resumes", user.verifyToken,user.verifyCandidate, validateResumeData, handleForm);
+router.post("/resumes/me/file", user.verifyToken, user.verifyCandidate, upload.single('file'), uploadRouteCall);
+
+//recruiter
 router.post("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, createRecruiterJob);
 router.get("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, getRecruiterJob);
 router.get("/recruiter/jobs/:jobId/questions", user.verifyToken, user.verifyRecruiter, generateMockInterviewQuestions);
 // router.get("/recruiter/jobs/:jobId/match-candidates", user.verifyToken, matchCandidatesToJob);
 
-router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
+
 
 
 
