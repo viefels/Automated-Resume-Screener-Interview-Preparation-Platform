@@ -7,7 +7,7 @@ import { configDotenv } from "dotenv";
 configDotenv({ path: "../../.env" });
 
 const USERSPATH = path.join(import.meta.dirname, "../data/candidates_basics.json");
-const CAND_CV_PATH = path.join(import.meta.dirname, "../data/candidates.json");
+const CAND_CV_PATH = path.join(import.meta.dirname, "../data/candidates_resume.json");
 // const REC_CV_PATH = path.join(import.meta.dirname, "../data/recruiters.json");
 
 const USERS = JSON.parse(await fs.readFile(USERSPATH, "utf8"));
@@ -37,7 +37,10 @@ export async function register (req, res){
             email: email,
             passwordHash: hashedPsw,
             role: role,
-            ...(role === "candidate" ? {hasCv: false}: {}),
+            ...(role === "candidate" ? {
+                hasResume: false,
+                resumeOverview: null
+            } : {jobOverview: null}),
             createdAt: new Date()
         }
         
@@ -87,7 +90,7 @@ export async function login(req, res){
                 role: role
             }
 
-            const token = jwt.sign(tokenPayLoad, JWT_SECRET_KEY, { expiresIn: "1hr" });
+            const token = jwt.sign(tokenPayLoad, JWT_SECRET_KEY, { expiresIn: "24hr" });
 
             return res.status(200).json({
                 success: true,

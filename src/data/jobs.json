@@ -17,7 +17,30 @@
       "max": 180000
     },
     "location": "Remote",
-    "createdAt": "2026-08-01T22:07:30.480Z"
+    "createdAt": "2026-08-01T22:07:30.480Z",
+    "keywords": [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Senior Frontend Engineer",
+      "Frontend Development",
+      "JavaScript",
+      "SSR Frameworks",
+      "Zustand",
+      "REST API",
+      "GraphQL",
+      "Jest",
+      "React Testing Library",
+      "Web Performance Optimization",
+      "Core Web Vitals",
+      "Cross-Browser Compatibility",
+      "Micro-Frontend Architectures",
+      "CI/CD Workflows",
+      "Vercel",
+      "AWS"
+    ]
   },
   {
     "id": "001",
@@ -37,7 +60,26 @@
       "max": 150000
     },
     "location": "Hybrid - New York, NY",
-    "createdAt": "2026-08-01T22:10:00.000Z"
+    "createdAt": "2026-08-01T22:10:00.000Z",
+    "keywords": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Backend Developer",
+      "FastAPI",
+      "SQL",
+      "RESTful APIs",
+      "WebSocket Services",
+      "Caching Strategies",
+      "Celery",
+      "RabbitMQ",
+      "Containerization",
+      "Linux Administration",
+      "Data Pipeline",
+      "API Contracts"
+    ]
   },
   {
     "id": "002",
@@ -57,7 +99,29 @@
       "max": 160000
     },
     "location": "Remote",
-    "createdAt": "2026-08-01T22:15:00.000Z"
+    "createdAt": "2026-08-01T22:15:00.000Z",
+    "keywords": [
+      "Node.js",
+      "Express",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Full Stack Engineer",
+      "JavaScript",
+      "NoSQL",
+      "Mongoose",
+      "Relational Databases",
+      "Authentication",
+      "JWT",
+      "OAuth2",
+      "Session Management",
+      "AWS",
+      "S3",
+      "EC2",
+      "CloudFront",
+      "Database Schema Design",
+      "UI Components"
+    ]
   },
   {
     "id": "003",
@@ -77,7 +141,27 @@
       "max": 170000
     },
     "location": "Austin, TX",
-    "createdAt": "2026-08-01T22:20:00.000Z"
+    "createdAt": "2026-08-01T22:20:00.000Z",
+    "keywords": [
+      "AWS",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions",
+      "Python",
+      "DevOps Engineer",
+      "Cloud Infrastructure",
+      "Site Reliability Engineering",
+      "EKS",
+      "GKE",
+      "Helm Charts",
+      "Infrastructure as Code",
+      "CI/CD Pipelines",
+      "GitLab CI",
+      "Bash Scripting",
+      "System Automation",
+      "Datadog",
+      "Prometheus"
+    ]
   },
   {
     "id": "004",
@@ -94,7 +178,23 @@
     "jobDescription": "Seeking a Product UI/UX Designer with 3+ years of experience designing complex B2B web and mobile SaaS applications.\n\nRequirements:\n- 3+ years of experience as a UI/UX Designer with a strong portfolio showcasing end-to-end design processes.\n- Advanced expertise in Figma (auto-layout, components, interactive prototyping).\n- Experience creating, maintaining, and scaling design systems across teams.\n- Practical background conducting user interviews, usability testing, and wireframing.\n- Ability to translate user feedback and product analytics into intuitive design solutions.",
     "salaryRange": null,
     "location": "Remote",
-    "createdAt": "2026-08-01T22:25:00.000Z"
+    "createdAt": "2026-08-01T22:25:00.000Z",
+    "keywords": [
+      "Figma",
+      "Design Systems",
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "UI/UX Designer",
+      "Product Designer",
+      "B2B SaaS",
+      "Mobile Applications",
+      "Auto-Layout",
+      "Interactive Prototyping",
+      "User Interviews",
+      "Usability Testing",
+      "Product Analytics"
+    ]
   },
   {
     "id": "005",
@@ -114,7 +214,26 @@
       "max": 155000
     },
     "location": null,
-    "createdAt": "2026-08-01T22:30:00.000Z"
+    "createdAt": "2026-08-01T22:30:00.000Z",
+    "keywords": [
+      "Python",
+      "Apache Airflow",
+      "Snowflake",
+      "dbt",
+      "SQL",
+      "Data Engineer",
+      "Data Engineering",
+      "Pipeline Orchestration",
+      "Scalable Data Platforms",
+      "Enterprise Data Warehouses",
+      "Batch Datasets",
+      "Streaming Datasets",
+      "BigQuery",
+      "Data Modeling",
+      "Star Schema",
+      "Data Vault",
+      "Modern Data Stack"
+    ]
   },
   {
     "id": "006",
@@ -134,7 +253,23 @@
       "max": 165000
     },
     "location": "Hybrid - New York, NY",
-    "createdAt": "2026-08-01T22:35:00.000Z"
+    "createdAt": "2026-08-01T22:35:00.000Z",
+    "keywords": [
+      "Product Strategy",
+      "Agile/Scrum",
+      "Jira",
+      "Mixpanel",
+      "Roadmapping",
+      "Product Manager",
+      "Technical Product Manager",
+      "Software Development",
+      "User Stories",
+      "PRDs",
+      "Technical Specs",
+      "Google Analytics",
+      "Amplitude",
+      "Feature Execution"
+    ]
   },
   {
     "id": "007",
@@ -154,7 +289,26 @@
       "max": 115000
     },
     "location": "Remote",
-    "createdAt": "2026-08-01T22:40:00.000Z"
+    "createdAt": "2026-08-01T22:40:00.000Z",
+    "keywords": [
+      "Playwright",
+      "Cypress",
+      "JavaScript",
+      "TypeScript",
+      "CI/CD",
+      "QA Automation Engineer",
+      "Automated Testing",
+      "End-to-End Testing",
+      "Selenium",
+      "GitHub Actions",
+      "Jenkins",
+      "API Testing",
+      "Postman",
+      "Supertest",
+      "Load Testing",
+      "k6",
+      "JMeter"
+    ]
   },
   {
     "id": "008",
@@ -174,7 +328,24 @@
       "max": 145000
     },
     "location": "Remote",
-    "createdAt": "2026-08-01T22:45:00.000Z"
+    "createdAt": "2026-08-01T22:45:00.000Z",
+    "keywords": [
+      "React Native",
+      "TypeScript",
+      "iOS",
+      "Android",
+      "Redux",
+      "Mobile App Developer",
+      "Cross-Platform Development",
+      "Apple App Store",
+      "Google Play Store",
+      "Swift",
+      "Kotlin",
+      "Native Bridge Modules",
+      "Performance Optimization",
+      "Offline-First Storage",
+      "Push Notifications"
+    ]
   },
   {
     "id": "009",
@@ -194,7 +365,29 @@
       "max": 175000
     },
     "location": "Austin, TX",
-    "createdAt": "2026-08-01T22:50:00.000Z"
+    "createdAt": "2026-08-01T22:50:00.000Z",
+    "keywords": [
+      "Penetration Testing",
+      "AWS Security",
+      "OWASP",
+      "SOC 2",
+      "Python",
+      "Security Engineer",
+      "Application Security",
+      "Cloud Infrastructure Security",
+      "Information Security",
+      "Vulnerability Assessments",
+      "Threat Modeling",
+      "Secure Code Review",
+      "IAM",
+      "KMS",
+      "GuardDuty",
+      "ISO 27001",
+      "GDPR",
+      "CISSP",
+      "CEH",
+      "OSCP"
+    ]
   },
   {
     "id": "010",
@@ -214,6 +407,25 @@
       "max": 155000
     },
     "location": null,
-    "createdAt": "2026-08-01T22:52:29.080Z"
+    "createdAt": "2026-08-01T22:52:29.080Z",
+    "keywords": [
+      "Python",
+      "Apache Airflow",
+      "Snowflake",
+      "dbt",
+      "SQL",
+      "Data Engineer",
+      "Data Engineering",
+      "Pipeline Orchestration",
+      "Scalable Data Platforms",
+      "Enterprise Data Warehouses",
+      "Batch Datasets",
+      "Streaming Datasets",
+      "BigQuery",
+      "Data Modeling",
+      "Star Schema",
+      "Data Vault",
+      "Modern Data Stack"
+    ]
   }
 ]
