@@ -53,7 +53,7 @@ export async function register (req, res){
         console.log(err)
         return res.status(500).json({
             success: false,
-            message: 'Server failed to respond'
+            message: 'Server failed to respond register new user request'
         });
     }
 
@@ -103,7 +103,7 @@ export async function login(req, res){
         console.log(err)
         return res.status(500).json({
             success: false,
-            message: 'Server failed to respond'
+            message: 'Server failed to respond to login request'
         });
     }
 }

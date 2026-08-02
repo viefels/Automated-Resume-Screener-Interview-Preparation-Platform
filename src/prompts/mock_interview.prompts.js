@@ -1,26 +1,21 @@
-export function buildMockInterviewPrompt(jobDescription, jobTitle = "", companyName = "") {
-  const context = [
-    jobTitle ? `Job Title: ${jobTitle}` : null,
-    companyName ? `Company: ${companyName}` : null,
-    `Job Description:\n${jobDescription}`
-  ]
-    .filter(Boolean)
-    .join("\n\n");
+export function buildMockInterviewPrompt(jobDesc, skills) {
+  const context = `
+    Company: ${skills.join(",")}
+    Job Description: ${jobDesc}`;
 
-  return [
-    {
-      text: `You are an expert technical recruiter and interviewer. Create a realistic mock interview questionnaire based on the provided job description. Return valid JSON only with this exact structure:
-      {
-        "questions": [
-          {
-            "id": 1,
-            "category": "Technical",
-            "difficulty": "Medium",
-            "question": "Question text",
-            "followUpQuestions": ["Follow-up question 1", "Follow-up question 2"],
-            "expectedAnswerFocus": "What a strong answer should cover"
+  return [{ text: `You are an expert technical recruiter and interviewer. Create realistic mock interview questionnaire based on the provided job description. Return valid JSON only with this exact structure:
+      { "questions": 
+       [{
+          "id": "q1",
+          "category": "React",
+          "question": "",
+          "context": "",
+          "hints": [string values],
+          "evaluationRubric": {
+            "scoringScale": "1-5",
+            "levels": { "1": "", "2": "", "3": "", "4": "", "5": "" }
           }
-        ]
+        }]
       }
 
       Requirements:

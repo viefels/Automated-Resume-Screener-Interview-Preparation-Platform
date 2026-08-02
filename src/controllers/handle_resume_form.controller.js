@@ -3,11 +3,11 @@ import path from "node:path";
 
 
 const CAND_CV_PATH = path.join(import.meta.dirname, "../data/candidates.json");
-const REC_CV_PATH = path.join(import.meta.dirname, "../data/recruiters.json");
+
 
 
 const CAND_CV = JSON.parse(await fs.readFile(CAND_CV_PATH, "utf8"));
-const REC_CV = JSON.parse(await fs.readFile(REC_CV_PATH, "utf8"));
+
 
 export default async function handleFormRoute(req, res){
     try{

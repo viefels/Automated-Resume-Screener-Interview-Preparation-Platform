@@ -12,7 +12,6 @@
     "email": "jordan.lee@example.com",
     "passwordHash": "$2b$10$89f/a1fX3a0M4kR0A1R23e.G0XyZ1W2V3U4T5S6R7Q8P9O0N1M2L",
     "role": "recruiter",
-    "hasCv": false,
     "createdAt": "2026-04-01T12:00:05.000Z"
   },
   {

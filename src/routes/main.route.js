@@ -4,24 +4,25 @@ import upload,{ ValidationError } from "../middleware/multer.middleware.js";
 import uploadRouteCall from "../controllers/upload.controller.js";
 import handleForm from "../controllers/handle_resume_form.controller.js";
 import validateResumeData from "../middleware/validate-form.middleware.js";
-import * as userMiddleware from "../middleware/auth.middleware.js";
+import * as user from "../middleware/auth.middleware.js";
 import * as userController from "../controllers/auth.controller.js";
-import { createRecruiterJob, generateMockInterviewQuestions, matchCandidatesToJob } from "../controllers/recruiter.controller.js";
+import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } from "../controllers/recruiter.controller.js";
 
 
 
 const router = express.Router();
 
-router.post("/resumes", userMiddleware.verifyToken, validateResumeData, handleForm);
+router.post("/resumes", user.verifyToken, validateResumeData, handleForm);
 
 
-router.post("/register", userMiddleware.validateUserDetails, userController.register);
+router.post("/register", user.validateUserDetails, userController.register);
 
-router.post("/login", userMiddleware.validateUserDetails, userController.login);
+router.post("/login", user.validateUserDetails, userController.login);
 
-router.post("/recruiter/jobs", userMiddleware.verifyToken, createRecruiterJob);
-router.post("/recruiter/mock-interview/questions", userMiddleware.verifyToken, generateMockInterviewQuestions);
-router.get("/recruiter/jobs/:jobId/match-candidates", userMiddleware.verifyToken, matchCandidatesToJob);
+router.post("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, createRecruiterJob);
+router.get("/recruiter/jobs", user.verifyToken, user.verifyRecruiter, getRecruiterJob);
+router.get("/recruiter/jobs/:jobId/questions", user.verifyToken, user.verifyRecruiter, generateMockInterviewQuestions);
+// router.get("/recruiter/jobs/:jobId/match-candidates", user.verifyToken, matchCandidatesToJob);
 
 router.post("/resumes/me/file", upload.single('file'), uploadRouteCall);
 

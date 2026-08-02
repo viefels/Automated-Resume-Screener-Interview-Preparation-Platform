@@ -11,7 +11,7 @@ export async function promptAI(promptArrObj) {
         const res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent", {
             method: "POST",
             headers: {
-                "X-goog-api-key": process.env.GEMINI_API_KEY,
+                "x-goog-api-key": process.env.GEMINI_API_KEY,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -23,16 +23,21 @@ export async function promptAI(promptArrObj) {
         });
 
         if (!res.ok) {
-            const errorData = await res.json();
-            console.error("API Request Failed:", res.status, errorData);
-            throw new Error(`Gemini API request failed with status ${res.status}`);
+            try{
+                const errorData = await res.json();
+                console.error("API Request Failed:", res.status, errorData);
+            
+            }
+            catch(err){
+                throw new Error(`Gemini API request failed with status ${res.status}, ${err}`);
+            }
         }
 
         const data = await res.json();
         const responseText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-        if (!responseText) {
-            throw new Error("Gemini API returned an empty response");
+        if (!responseText?.trim()) {
+            throw new Error("Gemini API returned an empty or blank response");
         }
 
         try {

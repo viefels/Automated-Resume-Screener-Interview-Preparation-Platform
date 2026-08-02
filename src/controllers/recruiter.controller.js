@@ -2,18 +2,14 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { buildMockInterviewPrompt } from "../prompts/mock_interview.prompts.js";
 import { promptAI } from "../prompts/handle_prompt_res.prompts.js";
+import { success } from "zod";
 
-const RECRUITER_JOBS_PATH = path.join(import.meta.dirname, "../data/recruiters.json");
+const RECRUITER_JOBS_PATH = path.join(import.meta.dirname, "../data/jobs.json");
 const CANDIDATE_DATA_PATH = path.join(import.meta.dirname, "../data/candidates.json");
 
-async function readRecruiterJobs() {
-  const data = await fs.readFile(RECRUITER_JOBS_PATH, "utf8");
-  return JSON.parse(data);
-}
+const recruiterJobs = JSON.parse(await fs.readFile(RECRUITER_JOBS_PATH, "utf8"));
 
-async function writeRecruiterJobs(data) {
-  await fs.writeFile(RECRUITER_JOBS_PATH, JSON.stringify(data, null, 2));
-}
+
 
 function normalizeText(value) {
   return (value || "")
@@ -66,16 +62,10 @@ function scoreCandidateAgainstJob(job, candidate) {
 
 export async function createRecruiterJob(req, res) {
   try {
-    const recruiterId = req.user?.uid;
+    const recruiterId = req.user.uid;
     const payload = req.body;
 
-    if (!recruiterId) {
-      return res.status(401).json({ success: false, error: "Unauthorized" });
-    }
-
-    if (req.user?.role !== "recruiter") {
-      return res.status(403).json({ success: false, error: "Only recruiters can create jobs" });
-    }
+    
 
     if (!payload || !payload.jobTitle || !payload.jobDescription) {
       return res.status(400).json({
@@ -83,91 +73,148 @@ export async function createRecruiterJob(req, res) {
         error: "jobTitle and jobDescription are required"
       });
     }
-
-    const recruiterJobsData = await readRecruiterJobs();
-    const jobs = Array.isArray(recruiterJobsData.jobs) ? recruiterJobsData.jobs : [];
+    
+    
 
     const newJob = {
-      id: `job-${Date.now()}`,
+      id: String(recruiterJobs.length).padStart(3, "0"),
       recruiterId,
       jobTitle: payload.jobTitle,
-      companyName: payload.companyName || "",
+      companyName: payload.companyName || null,
+      primarySkills: payload.primarySkills || null,
       jobDescription: payload.jobDescription,
-      requirements: payload.requirements || [],
-      location: payload.location || "",
+      salaryRange: payload.salaryRange || null,
+      location: payload.location || null,
       createdAt: new Date().toISOString()
     };
-
-    jobs.push(newJob);
-    recruiterJobsData.jobs = jobs;
-    recruiterJobsData.recruiterRequirements = recruiterJobsData.recruiterRequirements || newJob;
-
-    await writeRecruiterJobs(recruiterJobsData);
+    recruiterJobs.push(newJob)
+    await fs.writeFile(RECRUITER_JOBS_PATH, JSON.stringify(recruiterJobs, null, 2));
 
     return res.status(201).json({
       success: true,
-      message: "Recruiter job created successfully",
-      job: newJob
+      message: "Recruiter job created successfully"
     });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ success: false, error: "Failed to create recruiter job" });
+  } catch (err) {
+    console.log(err)
+    return res.status(500).json({ 
+      success: false, 
+      error: "Failed to create recruiter job" });
+  }
+}
+
+export function getRecruiterJob(req, res) {
+  try{
+    const recruiterId = req.user.uid;
+    let thisJobs = [];
+    if(recruiterJobs.length < 1){
+      return res.status(200).json({
+        success: true,
+        message: "No jobs available",
+        jobs: []
+      })
+    }
+    for(const job of recruiterJobs){
+      if(job.recruiterId === recruiterId){
+        const {recruiterId, ...safeJob} = job;
+        thisJobs.push(safeJob);
+      }
+    }
+
+    if(thisJobs.length < 1){
+      return res.status(200).json({
+        success: true,
+        message: "No jobs found for this recruiter.",
+        jobs: []
+      })
+    }
+    
+    return res.status(200).json({
+      success: true,
+      message: "Query successful",
+      jobs: thisJobs
+    })
+  }
+  catch(err){
+    return res.status(500).json({
+      success: false,
+      error: "Server Error fetching recruiter jobs"
+    })
   }
 }
 
 export async function generateMockInterviewQuestions(req, res) {
   try {
-    if (req.user?.role !== "recruiter") {
-      return res.status(403).json({ success: false, error: "Only recruiters can generate interview questions" });
+    const { jobId } =req.params;
+    const recruiterId = req.user.uid;
+
+    if(recruiterJobs.length < 1){
+      return res.status(200).json({
+        success: true,
+        message: "No jobs available",
+      })
     }
 
-    const { jobDescription, jobTitle, companyName } = req.body;
+    const existing = recruiterJobs.find(job => job.recruiterId === recruiterId && job.id === jobId);
 
-    if (!jobDescription) {
-      return res.status(400).json({ success: false, error: "jobDescription is required" });
+    if(!existing){
+      return res.status(404).json({
+        success: false,
+        error: "Job not found",
+      })
     }
 
-    const prompt = buildMockInterviewPrompt(jobDescription, jobTitle, companyName);
+    const {primarySkills, jobDescription} = existing;
+
+    if (!jobDescription || !primarySkills) {
+      return res.status(400).json({ 
+        success: false, 
+        error: "Please provide jobDescription and skills needed" 
+      });
+    }
+
+    const prompt = buildMockInterviewPrompt(jobDescription, primarySkills);
     const aiResponse = await promptAI(prompt);
 
     return res.status(200).json({
       success: true,
       questions: aiResponse?.questions || []
     });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ success: false, error: "Failed to generate interview questions" });
-  }
-}
-
-export async function matchCandidatesToJob(req, res) {
-  try {
-    if (req.user?.role !== "recruiter") {
-      return res.status(403).json({ success: false, error: "Only recruiters can rank candidates" });
-    }
-
-    const { jobId } = req.params;
-    const recruiterJobsData = await readRecruiterJobs();
-    const job = (recruiterJobsData.jobs || []).find((item) => item.id === jobId);
-
-    if (!job) {
-      return res.status(404).json({ success: false, error: "Job not found" });
-    }
-
-    const candidateData = JSON.parse(await fs.readFile(CANDIDATE_DATA_PATH, "utf8"));
-    const rankedCandidates = candidateData
-      .filter((candidate) => candidate?.basics?.fullName)
-      .map((candidate) => scoreCandidateAgainstJob(job, candidate))
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10);
-
-    return res.status(200).json({
-      success: true,
-      jobTitle: job.jobTitle,
-      rankedCandidates
+  } catch (err) {
+    return res.status(500).json({ 
+      success: false, 
+      error: "Failed to generate interview questions" 
     });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ success: false, error: "Failed to rank candidates" });
   }
 }
+
+// export async function matchCandidatesToJob(req, res) {
+//   try {
+//     if (req.user?.role !== "recruiter") {
+//       return res.status(403).json({ success: false, error: "Only recruiters can rank candidates" });
+//     }
+
+//     const { jobId } = req.params;
+//     const recruiterJobsData = await readRecruiterJobs();
+//     const job = (recruiterJobsData.jobs || []).find((item) => item.id === jobId);
+
+//     if (!job) {
+//       return res.status(404).json({ success: false, error: "Job not found" });
+//     }
+
+//     const candidateData = JSON.parse(await fs.readFile(CANDIDATE_DATA_PATH, "utf8"));
+//     const rankedCandidates = candidateData
+//       .filter((candidate) => candidate?.basics?.fullName)
+//       .map((candidate) => scoreCandidateAgainstJob(job, candidate))
+//       .sort((a, b) => b.score - a.score)
+//       .slice(0, 10);
+
+//     return res.status(200).json({
+//       success: true,
+//       jobTitle: job.jobTitle,
+//       rankedCandidates
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ success: false, error: "Failed to rank candidates" });
+//   }
+// }
