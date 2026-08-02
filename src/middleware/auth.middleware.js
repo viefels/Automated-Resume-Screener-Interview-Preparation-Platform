@@ -3,6 +3,7 @@ import path from "node:path";
 import jwt from "jsonwebtoken"
 import z, { success } from "zod";
 import { configDotenv } from "dotenv";
+import { verify } from "node:crypto";
 configDotenv({ path: "../../.env" });
 
 
@@ -57,28 +58,40 @@ export function verifyToken(req, res, next){
     try{
         const payload = jwt.verify(token, JWT_SECRET)
 
-        if(!payload){
-            return res.status(400).json({
-                success: false,
-                error: "Access denied. Token provided is invalid or expired."
-            });
-        }
         req.user = payload;
         next()
     }
     catch(err){
-        if (err.name === 'TokenExpiredError') {
-            return res.status(401).json({ 
-                success:false,
-                error: 'Token has expired, please log in again' 
-            });
-        }
-        
-        return res.status(403).json({ 
-            
-            error: 'Invalid token' });
+        return res.status(400).json({
+            success: false,
+            error: "Access denied. Token provided is invalid or expired."
+        });
     }
 
     
 
+}
+
+export function verifyRecruiter(req, res, next){
+    const payLoad = req.user;
+
+    if (req.user.role !== "recruiter") {
+        return res.status(403).json({ 
+        success: false, 
+        error: "Only recruiter are authorized" 
+        });
+    }
+    next();
+}
+
+export function verifyCandidate(req, res, next){
+    const payLoad = req.user;
+
+    if (req.user.role !== "candidate") {
+        return res.status(403).json({ 
+        success: false, 
+        error: "Only candidates are authorized" 
+        });
+    }
+    next();
 }
