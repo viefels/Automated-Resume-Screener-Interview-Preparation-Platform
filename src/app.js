@@ -5,8 +5,8 @@ import { configDotenv } from "dotenv";
 
 
 // const filePathWrite = path.join(import.meta.dirname,"src","data","data.json");
-const port = process.env.PORT;
-const hostname = process.env.IP;
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
 const app = express();
 
 app.use(express.json())
@@ -25,6 +25,6 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(port, ()=>{
-    console.log("Port is running")
+app.listen(PORT, HOST, ()=>{
+    console.log(`Server running on http://${HOST}:${PORT}`)
 })

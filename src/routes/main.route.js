@@ -8,13 +8,14 @@ import * as user from "../middleware/auth.middleware.js";
 import * as userController from "../controllers/auth.controller.js";
 import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } from "../controllers/recruiter.controller.js";
 
+import updateDB from "../lib/db_handler.js";
 
 
-
-const router = express.Router();
-router.get("/", (req,res)=>{
-    return res.status(404).send("404 not found")
-});
+// const router = express.Router();
+// router.get("/", (req,res)=>{
+//     updateDB("kskama")
+//     return res.status(200).send("404 not found")
+// });
 
 
 //auth
