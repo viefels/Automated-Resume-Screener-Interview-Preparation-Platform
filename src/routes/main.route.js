@@ -12,10 +12,10 @@ import updateDB from "../lib/db_handler.js";
 
 
 const router = express.Router();
-// router.get("/", (req,res)=>{
+router.get("/", (req,res)=>{
 //     updateDB("kskama")
-//     return res.status(200).send("404 not found")
-// });
+	return res.status(200).send("404 not found")
+});
 
 
 //auth
