@@ -46,7 +46,7 @@ export function validateUserDetails(req, res, next){
 export function isAuthenticated(req, res, next){
     const authHeader = req.headers["authorization"] || req.headers["Authorization"];
     if(!authHeader || !authHeader.startsWith("Bearer ")){
-        return res.status(400).json({
+        return res.status(401).json({
             success: false,
             error: "Access denied. No token provided."
         });
@@ -62,7 +62,7 @@ export function isAuthenticated(req, res, next){
         next()
     }
     catch(err){
-        return res.status(400).json({
+        return res.status(401).json({
             success: false,
             error: "Access denied. Token provided is invalid or expired."
         });
