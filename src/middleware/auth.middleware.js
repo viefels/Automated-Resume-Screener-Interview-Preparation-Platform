@@ -16,6 +16,13 @@ const  userSchema = z.object({
 })
 
 export function validateUserDetails(req, res, next){
+    if(!req.body){
+        return res.status(400).json({
+            success: false,
+            error: "Please provide a request"
+        });
+    }
+    
     const result = userSchema.safeParse(req.body);
     
     if(!result.success){
