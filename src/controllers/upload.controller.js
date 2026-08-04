@@ -33,13 +33,15 @@ export default async function uploadRouteCall(req, res) {
             { "text": `Source Text:\n${extractedTextVal}`}]
         
         const candidateObj = await handlePromptRes(prompt); 
-        // await fs.writeFile(path.join(import.meta.dirname, "../data/candidates.json"), JSON.stringify(candidateObj, null, 2));
+        
+        const {feedback, ...safecand} = candidateObj;
+        
         return res.status(200).json({
             success: true,
             message: "File Uploaded Successfully: ",
             filename: req.file.filename,
             size: `${(req.file.size/ (1024 * 1024)).toFixed(2)} MB`,
-            autofillData: candidateObj 
+            autofillData: safecand 
 
         });
     }
