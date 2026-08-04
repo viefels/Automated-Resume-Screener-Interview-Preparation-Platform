@@ -1,4 +1,4 @@
-# Class Backend API
+# Automated Resume Screener Interview Preparation Platform Backend API
 
 This backend exposes authentication, resume submission, resume file parsing, recruiter job management, and mock interview question generation endpoints.
 
