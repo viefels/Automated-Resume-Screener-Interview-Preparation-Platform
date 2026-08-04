@@ -7,7 +7,7 @@ import validateResumeData from "../middleware/validate-form.middleware.js";
 import * as user from "../middleware/auth.middleware.js";
 import * as userController from "../controllers/auth.controller.js";
 import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } from "../controllers/recruiter.controller.js";
-import getResumeFeedback from "../controllers/resume-feedback.controller.js";
+import getResumeFeedback from "../controllers/resume_feedback.controller.js";
 
 import updateDB from "../lib/db_handler.js";
 
