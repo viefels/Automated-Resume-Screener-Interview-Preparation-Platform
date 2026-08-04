@@ -13,7 +13,6 @@ import updateDB from "../lib/db_handler.js";
 
 const router = express.Router();
 router.get("/", (req,res)=>{
-//     updateDB("kskama")
 	return res.status(200).send("404 not found")
 });
 
@@ -25,16 +24,12 @@ router.post("/login", user.validateUserDetails, userController.login);
 //candidate
 router.post("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
 router.post("/candidate/resume/file", user.isAuthenticated, user.isCandidate, upload.single('file'), uploadRouteCall);
-router.get("/candidate/resume/feedback", user.isAuthenticated, user.isCandidate);
+router.get("/candidate/resume/feedback", user.isAuthenticated, user.isCandidate, getResumeFeedback);
 
 //recruiter
 router.post("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, createRecruiterJob);
 router.get("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, getRecruiterJob);
 router.get("/recruiter/jobs/:jobId/questions", user.isAuthenticated, user.isRecruiter, generateMockInterviewQuestions);
-// router.get("/recruiter/jobs/:jobId/match-candidates", user.isAuthenticated, matchCandidatesToJob);
-
-
-
 
 
 router.use((err, req, res, next) => {
