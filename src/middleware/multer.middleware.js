@@ -18,7 +18,7 @@ if (!fs.existsSync(uploadDir)) {
 
 const storageOptions = {
     destination: function (req, file, cb){
-        cb(null, path.join(import.meta.dirname, "../uploads"))
+        cb(null, path.join(uploadDir, "../uploads"))
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + "-" + file.originalname);
