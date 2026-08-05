@@ -1,4 +1,5 @@
 import express from "express";
+import path from "node:path";
 import multer from "multer";
 import upload,{ ValidationError } from "../middleware/multer.middleware.js";
 import uploadRouteCall from "../controllers/upload.controller.js";
@@ -16,9 +17,7 @@ import updateDB from "../lib/db_handler.js";
 
 
 const router = express.Router();
-router.get("/", (req,res)=>{
-	return res.status(200).send("404 not found")
-});
+
 
 
 //auth
@@ -63,6 +62,10 @@ router.use((err, req, res, next) => {
         })
     }
     next();
+});
+
+router.use((req, res) => {
+  res.status(404).sendFile(path.join(import.meta.dirname, '../404.html')); 
 });
 
 
