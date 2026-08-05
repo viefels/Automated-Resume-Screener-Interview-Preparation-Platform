@@ -106,7 +106,8 @@
         "Add cross-functional collab details",
         "Include design system governance"
       ]
-    }
+    },
+    "keywords": []
   }
 }
 

@@ -6,8 +6,11 @@ import handleForm from "../controllers/handle_resume_form.controller.js";
 import validateResumeData from "../middleware/validate-form.middleware.js";
 import * as user from "../middleware/auth.middleware.js";
 import * as userController from "../controllers/auth.controller.js";
-import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob } from "../controllers/recruiter.controller.js";
+import { createRecruiterJob, generateMockInterviewQuestions, getRecruiterJob, postRecruiterQuestion } from "../controllers/recruiter.controller.js";
 import getResumeFeedback from "../controllers/resume_feedback.controller.js";
+import validateQuestions from "../middleware/validate_questions.js";
+import getScoreController from "../controllers/get_score.controller.js";
+import getCandQuestions from "../controllers/get_candidate_questions.controller.js";
 
 import updateDB from "../lib/db_handler.js";
 
@@ -23,14 +26,17 @@ router.post("/register", user.validateUserDetails, userController.register);
 router.post("/login", user.validateUserDetails, userController.login);
 
 //candidate
-router.post("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
+router.put("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
 router.post("/candidate/resume/file", user.isAuthenticated, user.isCandidate, upload.single('file'), uploadRouteCall);
 router.get("/candidate/resume/feedback", user.isAuthenticated, user.isCandidate, getResumeFeedback);
+router.get("/candidate/jobs/score", user.isAuthenticated, user.isCandidate, getScoreController);
+router.get("/candidate/jobs/:jobId/questions", user.isAuthenticated, user.isCandidate, getCandQuestions);
 
 //recruiter
 router.post("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, createRecruiterJob);
 router.get("/recruiter/jobs", user.isAuthenticated, user.isRecruiter, getRecruiterJob);
 router.get("/recruiter/jobs/:jobId/questions", user.isAuthenticated, user.isRecruiter, generateMockInterviewQuestions);
+router.post("/recruiter/jobs/:jobId/questions",validateQuestions, user.isAuthenticated, user.isRecruiter, postRecruiterQuestion);
 
 
 router.use((err, req, res, next) => {

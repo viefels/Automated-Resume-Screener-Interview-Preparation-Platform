@@ -1,43 +1,79 @@
-# Automated Resume Screener Interview Preparation Platform Backend API
+# Automated Resume Screener Backend API
 
-This backend exposes authentication, resume submission, resume file parsing, recruiter job management, and mock interview question generation endpoints.
+This backend powers a recruitment workflow for candidates and recruiters. It supports user authentication, resume submission, AI-assisted resume parsing, job matching, and mock interview question generation.
 
-Base URL:
-- Local development: http://localhost:3000/api
+## Features
 
-Authentication:
-- Most endpoints require a Bearer token.
-- Obtain a token by calling the login endpoint.
-- Send the token in the Authorization header:
-  - Authorization: Bearer <token>
+- User registration and login for candidate and recruiter roles
+- Resume submission through structured JSON or file upload
+- AI-based resume parsing for autofill data
+- Candidate job matching and scoring
+- Recruiter job creation and mock interview question generation
 
-## 1. Authentication
+## Tech stack
+
+- Node.js + Express
+- JWT authentication
+- Multer for file uploads
+- PDF/DOCX parsing
+- JSON-based local data storage
+- Fuse.js for matching
+- Zod for validation
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Environment variables
+
+Create a .env file in the project root with at least:
+
+```env
+PORT=3000
+JWT_SECRET=your-secret-key
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+The API will be available at:
+
+- https://automated-resume-screener-interview.onrender.com/api
+
+- http://localhost:3000/api
+
+
+## Authentication
+
+Most protected routes require a Bearer token.
 
 ### POST /api/register
-Create a new user account.
+Create a new account.
 
 Request body:
+
 ```json
 {
   "email": "user@example.com",
   "password": "password123",
-  "role": "candidate"
+  "role": "candidate" //or can be recruiter
 }
 ```
 
-Required fields:
-- email: valid email address
-- password: minimum 8 characters
-- role: either "candidate" or "recruiter"
+Response:
 
-Validation rules:
-- email must be a valid email format
-- password must be at least 8 characters long
-- role must be one of the allowed values
-
-Success response:
-- Status: 201
-- Body:
 ```json
 {
   "success": true,
@@ -45,14 +81,11 @@ Success response:
 }
 ```
 
-Error responses:
-- 400: validation failure or duplicate email
-- 500: server error
-
 ### POST /api/login
-Authenticate an existing user and receive a JWT token.
+Authenticate a user and receive a JWT.
 
 Request body:
+
 ```json
 {
   "email": "user@example.com",
@@ -61,14 +94,8 @@ Request body:
 }
 ```
 
-Required fields:
-- email
-- password
-- role
+Response:
 
-Success response:
-- Status: 200
-- Body:
 ```json
 {
   "success": true,
@@ -83,91 +110,93 @@ Success response:
 }
 ```
 
-Error responses:
-- 400: invalid credentials or validation failure
-- 500: server error
-
-## 2. Candidate endpoints
+## Candidate endpoints
 
 All candidate routes require:
+
 - Authorization: Bearer <token>
-- A user whose role is "candidate"
+- A user whose role is candidate
 
-### POST /api/candidate/resume
-Save a fully structured candidate resume payload.
+### PUT /api/candidate/resume
+Save a structured resume payload.
 
-Request body:
+Example body:
+
 ```json
 {
   "candidate": {
     "basics": {
-      "fullName": "Jane Doe",
-      "jobTitle": "Software Engineer",
-      "email": "jane@example.com",
+      "fullName": "Alex Mercer",
+      "jobTitle": "Full Stack Engineer",
+      "email": "alex.mercer@example.com",
       "phone": [
         { "phone1": "+14155552671" }
       ],
       "nationality": ["American"],
-      "dob": "12/04/1995",
+      "dob": "14/05/1995",
       "maritalStatus": "Single",
       "location": {
-        "city": "Seattle",
-        "country": "USA"
+        "city": "San Francisco",
+        "country": "United States"
       },
       "links": [
         {
-          "label": "LinkedIn",
-          "url": "https://www.linkedin.com/in/jane-doe"
+          "label": "GitHub",
+          "url": "https://github.com/alexmercer"
         }
       ],
-      "fullAddress": "123 Main Street, Seattle, USA",
-      "summary": "Experienced backend developer",
+      "fullAddress": "7San Francisco, CA 94102",
+      "summary": "Fullstack engineer snsk....",
       "totalYearsExperience": 5
     },
     "skills": {
-      "technical": ["JavaScript", "Node.js", "Express"],
-      "toolsAndFrameworks": ["Docker", "PostgreSQL"]
+      "technical": ["JavaScript", "etc"],
+      "toolsAndFrameworks": ["React", "etc"]
     },
     "workExperience": [
       {
-        "jobTitle": "Backend Developer",
-        "company": "Acme Corp",
-        "location": "Remote",
-        "startDate": "2021-01",
+        "jobTitle": "Senior Software Engineer",
+        "company": "TechCorp Solutions",
+        "location": "San Francisco, CA",
+        "startDate": "01/2022",
         "endDate": "Present",
-        "highlights": ["Built APIs", "Improved performance"]
-      }
+        "highlights": [
+          "array of strings highlights",
+          "Led a team of 4 engineers to rebuild the core dashboard."
+        ]
+      },
+
     ],
     "education": [
       {
         "degree": "Bachelor of Science",
         "fieldOfStudy": "Computer Science",
-        "institution": "University of Washington",
-        "startDate": "2015-09",
-        "endDate": "2019-06",
+        "institution": "University of California, Berkeley",
+        "startDate": "09/2015",
+        "endDate": "05/2019",
         "honors": "Cum Laude",
         "gpa": "3.8"
       }
     ],
     "projects": [
       {
-        "name": "Inventory API",
-        "description": "Built a REST API for inventory management",
-        "technologiesUsed": ["Node.js", "Express"],
-        "link": "https://github.com/example/inventory-api"
+        "name": "DevFlow Analytics",
+        "description": "An open-source telemetry ...",
+        "technologiesUsed": ["React", "Node.js", "TailwindCSS"],
+        "link": "https://github.com/alexmercer/devflow"
       }
     ],
     "certifications": [
       {
-        "title": "AWS Certified Developer",
+        "title": "AWS Certified Solutions Architect",
         "issuer": "Amazon",
-        "issueDate": "2023-01"
+        "issueDate": "10/2023"
       }
     ],
     "languages": [
       {
         "language": "English",
-        "fluency": "Fluent"
+        "fluency": "Native"
       }
     ],
     "feedback": {}
@@ -175,22 +204,8 @@ Request body:
 }
 ```
 
-Validation details:
-- candidate is required
-- basics.fullName is required and must be at least 5 characters
-- basics.email must be a valid email address
-- basics.phone entries must match an international phone format such as +14155552671
-- basics.nationality must contain at least one value
-- basics.dob must follow the format dd/mm/yyyy when provided
-- basics.location.city and basics.location.country are required
-- basics.links entries must contain a valid URL when provided
-- basics.totalYearsExperience must be a positive number between 1 and 99
-- skills.technical must contain at least one skill
-- languages must contain at least one entry
-
 Success response:
-- Status: 201
-- Body:
+
 ```json
 {
   "success": true,
@@ -198,20 +213,15 @@ Success response:
 }
 ```
 
-Error responses:
-- 400: invalid or incomplete payload
-- 500: server error
-
 ### POST /api/candidate/resume/file
-Upload a resume file and receive AI-extracted candidate data.
+Upload a resume file for AI parsing.
 
-Request:
-- Content-Type: multipart/form-data
-- Field name: file
-- Supported file types: .pdf, .docx
-- Maximum file size: 5 MB
+- Form field name: file
+- Supported formats: .pdf, .docx
+- Maximum size: 5 MB
 
-Example with curl:
+Example:
+
 ```bash
 curl -X POST http://localhost:3000/api/candidate/resume/file \
   -H "Authorization: Bearer <token>" \
@@ -219,35 +229,90 @@ curl -X POST http://localhost:3000/api/candidate/resume/file \
 ```
 
 Success response:
-- Status: 200
-- Body:
+
 ```json
 {
   "success": true,
-  "message": "File Uploaded Successfully:",
-  "filename": "1710000000000-resume.pdf",
+  "message": "File Uploaded Successfully: ",
+  "filename": "resume.pdf",
   "size": "1.20 MB",
-  "autofillData": {}
+  "autofillData": {"same data as PUT /api/candidate/resume"}
 }
 ```
 
-Error responses:
-- 400: no file provided, unsupported file type, or file too large
-- 500: server processing error
-
 ### GET /api/candidate/resume/feedback
-This route is currently registered but does not have an implementation handler, so it should be treated as a placeholder for future functionality.
+Retrieve resume feedback information for the authenticated candidate.
 
-## 3. Recruiter endpoints
+```json
+{
+  "success": true,
+  "data": {
+      "targetRole": "Data Scientist",
+      "overallMatch": {
+        "score": "88%",
+        "remarks": "Strong background in data science etc.",
+        "sectionScores": {
+          "formatting": "90%",
+          "keywords": "85%",
+          "actionVerbs": "88%"
+        }
+      },
+      "keyHighlights": [
+        "array of strings feedbacks",
+        "e.g Solid academic foundation in Data Science with a 3.85 GPA"
+      ],
+      "actionableFeedback": [
+        "array of strings feedbacks"
+      ]
+    }
+}
+```
+
+
+### GET /api/candidate/jobs/score
+Get job matches and score results for the candidate.
+
+response
+```json
+{
+  "overallScore": 80, 
+  "skillsMatched":{
+    "React": 20
+  },  
+  "missingSkills":{
+    "Html": 20
+  }, 
+  "job": {
+    "jobTitle": "Cybersecurity Engineer",
+    "companyName": "Shield Security",
+    "primarySkills": [
+      "Python", "etc"
+    ],
+    "jobDescription": "We are looking for....",
+    "salaryRange": {
+      "min": 125000,
+      "max": 160000
+    },
+    "location": "Seattle, WA"
+  }
+}
+```
+
+### GET /api/candidate/jobs/:jobId/questions
+Fetch interview questions for a specific job.
+
+## Recruiter endpoints
 
 All recruiter routes require:
+
 - Authorization: Bearer <token>
-- A user whose role is "recruiter"
+- A user whose role is recruiter
 
 ### POST /api/recruiter/jobs
-Create a recruiter job posting.
+Create a job posting.
 
 Request body:
+
 ```json
 {
   "jobTitle": "Software Engineer",
@@ -255,26 +320,15 @@ Request body:
   "primarySkills": ["Node.js", "Express", "PostgreSQL"],
   "jobDescription": "Build and maintain backend services for a SaaS platform.",
   "salaryRange": {
-      "min": 115000,
-      "max": 155000
-    },
+    "min": 115000,
+    "max": 155000
+  },
   "location": "Remote"
 }
 ```
 
-Required fields:
-- jobTitle: required
-- jobDescription: required
+Response:
 
-Optional fields:
-- companyName
-- primarySkills
-- salaryRange
-- location
-
-Success response:
-- Status: 201
-- Body:
 ```json
 {
   "success": true,
@@ -282,68 +336,46 @@ Success response:
 }
 ```
 
-Error responses:
-- 400: missing required fields
-- 500: server error
-
 ### GET /api/recruiter/jobs
 Fetch all jobs created by the authenticated recruiter.
 
-Success response:
-- Status: 200
-- Body:
-```json
-{
-  "success": true,
-  "message": "Query successful",
-  "jobs": [{
-  "jobTitle": "Software Engineer",
-  "companyName": "Example Inc",
-  "primarySkills": ["Node.js", "Express", "PostgreSQL"],
-  "jobDescription": "Build and maintain backend services for a SaaS platform.",
-  "salaryRange": {
-      "min": 115000,
-      "max": 155000
-    },
-  "location": "Remote"
-}]
-}
-```
+
 
 ### GET /api/recruiter/jobs/:jobId/questions
 Generate mock interview questions for a specific recruiter job.
 
-Path parameters:
-- jobId: ID of the job created by the authenticated recruiter
+### POST /api/recruiter/jobs/:jobId/questions
+Save recruiter-provided questions for a specific job.
 
-Success response:
-- Status: 200
-- Body:
-```json
+```json body
 {
-  "success": true,
-  "questions": [{
-          "id": "q1",
-          "category": "React",
-          "question": "",
-          "context": "",
-          "hints": [string values],
-          "evaluationRubric": {
-            "scoringScale": "1-5",
-            "levels": { "1": "", "2": "", "3": "", "4": "", "5": "" }
-          }
-        }]
+  "questions": [
+    {
+      "id": "q1",
+      "category": "SIEM & Log Analysis",
+      "question": "How do you construct a SIEM search query in Splunk ....?",
+      "context": "Evaluates hands-on log analysis skills using industry-st....",
+      "hints": [
+        "Focus on high volume of failed ......"
+      ],
+      "evaluationRubric": {
+        "scoringScale": "1-5",
+        "levels": {
+          "1": "Shows minimal ...",
+          "2": "Understands ....",
+          "3": "Provides a working basic ...",
+          "4": "Formulates an accurate, optimized query ...",
+          "5": "Demonstrates advanced query crafting..."
+        }
+      }
+    },
 }
 ```
 
-Error responses:
-- 404: job not found
-- 400: missing jobDescription or primarySkills for the job
-- 500: server error
+## Error format
 
-## 4. Common error patterns
+The API returns JSON errors in the following shape:
 
-The API returns JSON error responses in the following format:
 ```json
 {
   "success": false,
@@ -351,22 +383,9 @@ The API returns JSON error responses in the following format:
 }
 ```
 
-Validation failures may include a detailed errors object such as:
-```json
-{
-  "success": false,
-  "message": "Validation failed for candidate payload",
-  "errors": {
-    "candidate.basics.email": ["Invalid email format"]
-  }
-}
-```
+Common status codes:
 
-## 5. Notes
+- 400: invalid input or bad request
+- 404: resource not found
+- 500: server error
 
-- The app is mounted under /api.
-- The server uses JSON bodies for most endpoints, except the resume file upload endpoint.
-- The resume file upload endpoint uses AI-based parsing and returns autofill data in the response.
-- Recruiter job creation also uses AI to generate keywords for matching candidates.
-
- 

@@ -1,79 +1,28 @@
 [
   {
-    "id": "user-4a8f9b2c-1d3e-4f5a-6b7c-8d9e0f1a2b3c",
-    "email": "livingstone.isaac@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "id": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "email": "oliveiramiguel@angel.com",
+    "passwordHash": "$2b$10$BqSbjnzQI9ElWhdXWnYFde6zfmiYHxi/Fe.uUK5V.gddy99CFSfVa",
     "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z"
+    "hasResume": false,
+    "resumeOverview": null,
+    "createdAt": "2026-08-04T15:33:36.698Z"
   },
   {
-    "id": "user-a8b2c3d4-e5f6-4789-9a1b-2c3d4e5f6a7b",
-    "email": "sarah.chen@techrecruiters.co",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
+    "id": "user-0f2843df-7e52-4e93-bd14-2df71738e16a",
+    "email": "oliveiramigul@angel.com",
+    "passwordHash": "$2b$10$jmQtSpbu0TbxvFqMLMgeE.YBK.Rm8eddhx1zqyNIFvryjtg6vIsu2",
+    "role": "candidate",
+    "hasResume": false,
+    "resumeOverview": null,
+    "createdAt": "2026-08-05T00:20:41.351Z"
+  },
+  {
+    "id": "user-45ffe10b-567e-430a-8588-cf7cd809e8cb",
+    "email": "oliveiramigu@angel.com",
+    "passwordHash": "$2b$10$GDjYKgvQ0yWwRczlTO2Wh.dxLkRNu4EN6FEFxGbDonOs7hCp5IFpm",
     "role": "recruiter",
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-b9c3d4e5-f6a7-4890-a1b2-3c4d5e6f7a8b",
-    "email": "david.smith@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-c0d4e5f6-a7b8-4901-b2c3-4d5e6f7a8b9c",
-    "email": "emily.davis@talentgroup.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "recruiter",
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-d1e5f6a7-b8c9-4012-c3d4-5e6f7a8b9c0d",
-    "email": "michael.brown@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-e2f6a7b8-c9d0-4123-d4e5-6f7a8b9c0d1e",
-    "email": "jessica.taylor@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-f3a7b8c9-d0e1-4234-e5f6-7a8b9c0d1e2f",
-    "email": "marcus.vance@apexhires.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "recruiter",
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-a4b8c9d0-e1f2-4345-f6a7-8b9c0d1e2f3a",
-    "email": "hannah.wilson@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z",
-    "hasResume": true
-  },
-  {
-    "id": "user-b5c9d0e1-f2a3-4456-a7b8-9c0d1e2f3a4b",
-    "email": "james.martinez@example.com",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "candidate",
-    "hasCv": false,
-    "createdAt": "2026-08-02T11:15:00.000Z"
-  },
-  {
-    "id": "user-c6d0e1f2-a3b4-4567-b8c9-0d1e2f3a4b5c",
-    "email": "claire.dubois@globalstaffing.org",
-    "passwordHash": "$2b$10$ZoCzgEIpGtYLYGLOtAfTmeo7jrgcBStsmuQNx1/Awa2XbNSsEBbe.",
-    "role": "recruiter",
-    "createdAt": "2026-08-02T11:15:00.000Z"
+    "jobOverview": null,
+    "createdAt": "2026-08-05T00:28:47.889Z"
   }
 ]

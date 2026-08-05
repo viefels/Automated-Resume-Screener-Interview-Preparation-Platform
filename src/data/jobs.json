@@ -1,431 +1,322 @@
 [
   {
-    "id": "000",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Senior Frontend Engineer",
-    "companyName": "Acme Tech",
-    "primarySkills": [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Redux Toolkit"
-    ],
-    "jobDescription": "We are looking for a Senior Frontend Engineer with at least 5 years of professional experience building high-performance web applications. You will lead the development of our core customer dashboard, optimize web performance, and mentor junior engineers.\n\nKey Requirements:\n- 5+ years of hands-on experience with modern JavaScript, TypeScript, and React.\n- Proven track record with SSR frameworks, specifically Next.js.\n- Strong expertise in state management (Redux Toolkit, Zustand) and API integration (REST, GraphQL).\n- Experience writing unit and integration tests using Jest and React Testing Library.\n- Deep understanding of web performance optimization, core web vitals, and cross-browser compatibility.\n\nBonus Points:\n- Experience with micro-frontend architectures.\n- Familiarity with CI/CD deployment workflows on Vercel or AWS.",
-    "salaryRange": {
-      "min": 130000,
-      "max": 180000
-    },
-    "location": "Remote",
-    "createdAt": "2026-08-01T22:07:30.480Z",
-    "keywords": [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Senior Frontend Engineer",
-      "Frontend Development",
-      "JavaScript",
-      "SSR Frameworks",
-      "Zustand",
-      "REST API",
-      "GraphQL",
-      "Jest",
-      "React Testing Library",
-      "Web Performance Optimization",
-      "Core Web Vitals",
-      "Cross-Browser Compatibility",
-      "Micro-Frontend Architectures",
-      "CI/CD Workflows",
-      "Vercel",
-      "AWS"
-    ]
-  },
-  {
     "id": "001",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Backend Developer",
-    "companyName": "Acme Tech",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Data Scientist",
+    "companyName": "DataPulse Analytics",
     "primarySkills": [
       "Python",
-      "Django",
-      "PostgreSQL",
-      "Redis",
-      "Docker"
+      "SQL",
+      "Scikit-Learn",
+      "Pandas",
+      "Tableau"
     ],
-    "jobDescription": "Acme Tech is seeking a Backend Developer with 3+ years of experience to design, build, and maintain robust server-side applications and database architectures.\n\nKey Requirements:\n- 3+ years of commercial backend development using Python and Django or FastAPI.\n- Strong SQL proficiency and hands-on experience optimizing complex PostgreSQL queries.\n- Experience designing and documenting RESTful APIs and WebSocket services.\n- Knowledge of caching strategies using Redis and message queues like Celery or RabbitMQ.\n- Hands-on experience with Docker containerization and basic Linux server administration.\n\nResponsibilities:\n- Develop secure, scalable backend services for our data pipeline.\n- Collaborating with frontend teams to define API contracts.",
+    "jobDescription": "We are seeking a Data Scientist to help turn complex dataset patterns into actionable business insights. You will work closely with product and marketing teams to build predictive models and automated dashboards.\n\nKey Requirements:\n- 3+ years of experience analyzing large datasets using Python and SQL.\n- Practical experience building machine learning models for classification and regression.\n- Ability to turn complex technical output into clear business insights.\n- Expertise in data visualization tools like Tableau or PowerBI.\n\nBonus Points:\n- Knowledge of BigQuery or Snowflake.\n- Experience running A/B experiments at scale.",
     "salaryRange": {
-      "min": 110000,
+      "min": 115000,
       "max": 150000
     },
-    "location": "Hybrid - New York, NY",
-    "createdAt": "2026-08-01T22:10:00.000Z",
+    "location": "Remote",
+    "createdAt": "2026-08-02T09:15:00.000Z",
     "keywords": [
       "Python",
-      "Django",
-      "PostgreSQL",
-      "Redis",
-      "Docker",
-      "Backend Developer",
-      "FastAPI",
       "SQL",
-      "RESTful APIs",
-      "WebSocket Services",
-      "Caching Strategies",
-      "Celery",
-      "RabbitMQ",
-      "Containerization",
-      "Linux Administration",
-      "Data Pipeline",
-      "API Contracts"
+      "Scikit-Learn",
+      "Pandas",
+      "Tableau",
+      "Data Scientist",
+      "Machine Learning",
+      "Predictive Modeling",
+      "Data Visualization",
+      "A/B Testing"
     ]
   },
   {
     "id": "002",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Full Stack Engineer",
-    "companyName": "Acme Tech",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Backend Software Engineer",
+    "companyName": "CloudScale Systems",
     "primarySkills": [
       "Node.js",
-      "Express",
-      "React",
-      "TypeScript",
-      "MongoDB"
+      "Go",
+      "PostgreSQL",
+      "Docker",
+      "Redis"
     ],
-    "jobDescription": "We are searching for a versatile Full Stack Engineer with 4+ years of end-to-end web application development experience using the JavaScript/TypeScript ecosystem.\n\nQualifications Needed:\n- 4+ years building full-stack applications with React on the frontend and Node.js/Express on the backend.\n- Strong understanding of NoSQL database design (MongoDB/Mongoose) and relational databases.\n- Familiarity with authentication strategies (JWT, OAuth2, Session management).\n- Experience deploying applications using AWS services (S3, EC2, CloudFront).\n\nWhat You Will Do:\n- Own end-to-end features from database schema design down to UI components.\n- Work closely with product managers to scope and deliver new product features on time.",
-    "salaryRange": {
-      "min": 120000,
-      "max": 160000
-    },
-    "location": "Remote",
-    "createdAt": "2026-08-01T22:15:00.000Z",
-    "keywords": [
-      "Node.js",
-      "Express",
-      "React",
-      "TypeScript",
-      "MongoDB",
-      "Full Stack Engineer",
-      "JavaScript",
-      "NoSQL",
-      "Mongoose",
-      "Relational Databases",
-      "Authentication",
-      "JWT",
-      "OAuth2",
-      "Session Management",
-      "AWS",
-      "S3",
-      "EC2",
-      "CloudFront",
-      "Database Schema Design",
-      "UI Components"
-    ]
-  },
-  {
-    "id": "003",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "DevOps Engineer",
-    "companyName": null,
-    "primarySkills": [
-      "AWS",
-      "Kubernetes",
-      "Terraform",
-      "GitHub Actions",
-      "Python"
-    ],
-    "jobDescription": "We need a DevOps Engineer with 4+ years of cloud infrastructure management experience to automate, scale, and secure our multi-region AWS cloud setup.\n\nCandidate Profile:\n- 4+ years of dedicated DevOps or Site Reliability Engineering experience.\n- Production experience managing Kubernetes clusters (EKS/GKE) and Helm charts.\n- Proficient in Infrastructure as Code (IaC) using Terraform.\n- Expertise in setting up automated CI/CD pipelines using GitHub Actions or GitLab CI.\n- Strong scripting skills in Python or Bash for system automation.\n\nCore Responsibilities:\n- Maintain 99.99% infrastructure uptime and improve automated monitoring/alerting via Datadog and Prometheus.",
-    "salaryRange": {
-      "min": 130000,
-      "max": 170000
-    },
-    "location": "Austin, TX",
-    "createdAt": "2026-08-01T22:20:00.000Z",
-    "keywords": [
-      "AWS",
-      "Kubernetes",
-      "Terraform",
-      "GitHub Actions",
-      "Python",
-      "DevOps Engineer",
-      "Cloud Infrastructure",
-      "Site Reliability Engineering",
-      "EKS",
-      "GKE",
-      "Helm Charts",
-      "Infrastructure as Code",
-      "CI/CD Pipelines",
-      "GitLab CI",
-      "Bash Scripting",
-      "System Automation",
-      "Datadog",
-      "Prometheus"
-    ]
-  },
-  {
-    "id": "004",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "UI/UX Designer",
-    "companyName": "Acme Tech",
-    "primarySkills": [
-      "Figma",
-      "Design Systems",
-      "User Research",
-      "Wireframing",
-      "Prototyping"
-    ],
-    "jobDescription": "Seeking a Product UI/UX Designer with 3+ years of experience designing complex B2B web and mobile SaaS applications.\n\nRequirements:\n- 3+ years of experience as a UI/UX Designer with a strong portfolio showcasing end-to-end design processes.\n- Advanced expertise in Figma (auto-layout, components, interactive prototyping).\n- Experience creating, maintaining, and scaling design systems across teams.\n- Practical background conducting user interviews, usability testing, and wireframing.\n- Ability to translate user feedback and product analytics into intuitive design solutions.",
-    "salaryRange": null,
-    "location": "Remote",
-    "createdAt": "2026-08-01T22:25:00.000Z",
-    "keywords": [
-      "Figma",
-      "Design Systems",
-      "User Research",
-      "Wireframing",
-      "Prototyping",
-      "UI/UX Designer",
-      "Product Designer",
-      "B2B SaaS",
-      "Mobile Applications",
-      "Auto-Layout",
-      "Interactive Prototyping",
-      "User Interviews",
-      "Usability Testing",
-      "Product Analytics"
-    ]
-  },
-  {
-    "id": "005",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Data Engineer",
-    "companyName": "Acme Tech",
-    "primarySkills": [
-      "Python",
-      "Apache Airflow",
-      "Snowflake",
-      "dbt",
-      "SQL"
-    ],
-    "jobDescription": "Looking for a Data Engineer with 4+ years of experience constructing scalable data platforms, pipeline orchestration, and enterprise data warehouses.\n\nJob Qualifications:\n- 4+ years of experience in data engineering, processing large-scale batch and streaming datasets.\n- Advanced SQL skills and solid proficiency in Python.\n- Extensive experience building pipeline orchestration using Apache Airflow.\n- Production experience with modern data stack tools such as Snowflake, dbt, and BigQuery.\n- Knowledge of data modeling techniques (Star Schema, Data Vault).",
-    "salaryRange": {
-      "min": 115000,
-      "max": 155000
-    },
-    "location": null,
-    "createdAt": "2026-08-01T22:30:00.000Z",
-    "keywords": [
-      "Python",
-      "Apache Airflow",
-      "Snowflake",
-      "dbt",
-      "SQL",
-      "Data Engineer",
-      "Data Engineering",
-      "Pipeline Orchestration",
-      "Scalable Data Platforms",
-      "Enterprise Data Warehouses",
-      "Batch Datasets",
-      "Streaming Datasets",
-      "BigQuery",
-      "Data Modeling",
-      "Star Schema",
-      "Data Vault",
-      "Modern Data Stack"
-    ]
-  },
-  {
-    "id": "006",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Product Manager",
-    "companyName": "Acme Tech",
-    "primarySkills": [
-      "Product Strategy",
-      "Agile/Scrum",
-      "Jira",
-      "Mixpanel",
-      "Roadmapping"
-    ],
-    "jobDescription": "We are hiring a Technical Product Manager with 5+ years of software product management experience to drive product strategy and feature execution.\n\nWhat We Expect:\n- 5+ years managing technical products in an Agile/Scrum software development environment.\n- Demonstrated ability to convert business goals into detailed user stories, PRDs, and technical specs.\n- Strong analytical mindset with experience using tools like Mixpanel, Google Analytics, or Amplitude.\n- Exceptional communication skills with a track record of balancing engineering priorities and stakeholder requirements.",
+    "jobDescription": "We need a Backend Engineer to build scalable microservices for our core payment infrastructure. You will handle database architecture, system reliability, and API integrations.\n\nKey Requirements:\n- 4+ years of backend development experience with Node.js or Go.\n- Solid experience with relational databases like PostgreSQL and caching with Redis.\n- Hands-on practice building RESTful APIs and gRPC services.\n- Deep understanding of system performance and concurrency.\n\nBonus Points:\n- Experience handling financial transactions or payment gateway integrations.\n- Familiarity with Kubernetes.",
     "salaryRange": {
       "min": 125000,
       "max": 165000
     },
-    "location": "Hybrid - New York, NY",
-    "createdAt": "2026-08-01T22:35:00.000Z",
+    "location": "San Francisco, CA (Hybrid)",
+    "createdAt": "2026-08-02T11:30:12.100Z",
     "keywords": [
-      "Product Strategy",
-      "Agile/Scrum",
-      "Jira",
-      "Mixpanel",
-      "Roadmapping",
-      "Product Manager",
-      "Technical Product Manager",
-      "Software Development",
-      "User Stories",
-      "PRDs",
-      "Technical Specs",
-      "Google Analytics",
-      "Amplitude",
-      "Feature Execution"
+      "Node.js",
+      "Go",
+      "PostgreSQL",
+      "Docker",
+      "Redis",
+      "Backend Engineer",
+      "Microservices",
+      "REST API",
+      "gRPC",
+      "System Architecture"
+    ]
+  },
+  {
+    "id": "003",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Data Engineer",
+    "companyName": "StreamData Co",
+    "primarySkills": [
+      "Apache Spark",
+      "Python",
+      "SQL",
+      "Airflow",
+      "Snowflake"
+    ],
+    "jobDescription": "Looking for a Data Engineer to design, build, and maintain real-time data pipelines. You will optimize our data warehouse and make sure data is clean and accessible across the company.\n\nKey Requirements:\n- 4+ years building ETL and ELT data pipelines.\n- Advanced SQL skills and proficiency in Python.\n- Direct experience with Apache Spark, Airflow, and cloud data warehouses like Snowflake or Redshift.\n- Practice with data modeling principles and pipeline automation.\n\nBonus Points:\n- Familiarity with streaming tools like Apache Kafka.\n- Knowledge of dbt for data transformation.",
+    "salaryRange": {
+      "min": 130000,
+      "max": 170000
+    },
+    "location": "Remote",
+    "createdAt": "2026-08-02T14:45:22.500Z",
+    "keywords": [
+      "Apache Spark",
+      "Python",
+      "SQL",
+      "Airflow",
+      "Snowflake",
+      "Data Engineer",
+      "ETL",
+      "ELT",
+      "Data Warehousing",
+      "Kafka"
+    ]
+  },
+  {
+    "id": "004",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "DevOps / Infrastructure Engineer",
+    "companyName": "Nexus Cloud",
+    "primarySkills": [
+      "AWS",
+      "Terraform",
+      "Kubernetes",
+      "Docker",
+      "CI/CD"
+    ],
+    "jobDescription": "Join our team as a DevOps Engineer to manage our cloud infrastructure, scale automated pipelines, and maintain uptime for microservices.\n\nKey Requirements:\n- 3+ years running cloud operations on AWS.\n- Production experience using Terraform for Infrastructure as Code.\n- Expertise in Kubernetes management and container orchestration.\n- Solid background with CI/CD tools like GitHub Actions or GitLab CI.\n\nBonus Points:\n- Experience with monitoring setups like Prometheus and Grafana.\n- AWS DevOps certification.",
+    "salaryRange": {
+      "min": 120000,
+      "max": 160000
+    },
+    "location": "Austin, TX",
+    "createdAt": "2026-08-03T08:10:05.000Z",
+    "keywords": [
+      "AWS",
+      "Terraform",
+      "Kubernetes",
+      "Docker",
+      "CI/CD",
+      "DevOps",
+      "Infrastructure",
+      "Cloud Operations",
+      "GitHub Actions",
+      "Prometheus"
+    ]
+  },
+  {
+    "id": "005",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Machine Learning Engineer",
+    "companyName": "AI Vision Labs",
+    "primarySkills": [
+      "PyTorch",
+      "Python",
+      "MLflow",
+      "FastAPI",
+      "Docker"
+    ],
+    "jobDescription": "We are hiring a Machine Learning Engineer to take computer vision models from research into production environment APIs. You will focus on model deployment, monitoring, and optimization.\n\nKey Requirements:\n- 3+ years writing Python for deep learning frameworks (PyTorch or TensorFlow).\n- Track record of deploying ML models into real-time production systems.\n- Experience wrapping models in light microservices using FastAPI or Flask.\n- Familiarity with MLOps pipelines using MLflow or Weights & Biases.\n\nBonus Points:\n- Experience running model quantization or edge deployments.\n- Experience with GPU cluster management.",
+    "salaryRange": {
+      "min": 140000,
+      "max": 190000
+    },
+    "location": "New York, NY (Hybrid)",
+    "createdAt": "2026-08-03T10:00:00.340Z",
+    "keywords": [
+      "PyTorch",
+      "Python",
+      "MLflow",
+      "FastAPI",
+      "Docker",
+      "Machine Learning Engineer",
+      "MLOps",
+      "Deep Learning",
+      "Computer Vision",
+      "Model Deployment"
+    ]
+  },
+  {
+    "id": "006",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Full Stack Engineer",
+    "companyName": "BrightApp Solutions",
+    "primarySkills": [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "MongoDB",
+      "Express"
+    ],
+    "jobDescription": "We need a product-minded Full Stack Engineer to lead features from UI design to database integrations. You will work across modern React codebases and Node.js microservices.\n\nKey Requirements:\n- 3+ years building full stack web apps with React, Node.js, and TypeScript.\n- Comfortable designing REST APIs and configuring NoSQL databases like MongoDB.\n- Clear understanding of authorization flows, user sessions, and web security.\n- Skill with Git workflows and modern deployment practices.\n\nBonus Points:\n- Native mobile app development with React Native.\n- Experience in consumer SaaS products.",
+    "salaryRange": {
+      "min": 110000,
+      "max": 150000
+    },
+    "location": "Remote",
+    "createdAt": "2026-08-03T13:20:44.000Z",
+    "keywords": [
+      "React",
+      "Node.js",
+      "TypeScript",
+      "MongoDB",
+      "Express",
+      "Full Stack Engineer",
+      "REST API",
+      "NoSQL",
+      "SaaS",
+      "Web Security"
     ]
   },
   {
     "id": "007",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "QA Automation Engineer",
-    "companyName": "Acme Tech",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Data Analyst",
+    "companyName": "Metrics HQ",
     "primarySkills": [
-      "Playwright",
-      "Cypress",
-      "JavaScript",
-      "TypeScript",
-      "CI/CD"
+      "SQL",
+      "Excel",
+      "PowerBI",
+      "Python",
+      "Statistics"
     ],
-    "jobDescription": "Acme Tech is looking for a QA Automation Engineer with 3+ years of automated testing experience to build reliable end-to-end test suites.\n\nRequirements:\n- 3+ years of experience writing automated test frameworks using Playwright, Cypress, or Selenium.\n- Strong proficiency in JavaScript or TypeScript for writing clean, maintainable test scripts.\n- Hands-on experience integrating automated tests into CI/CD pipelines (GitHub Actions, Jenkins).\n- Familiarity with API testing tools like Postman or Supertest.\n- Experience in load testing (k6, JMeter) is a plus.",
+    "jobDescription": "Looking for a Data Analyst to handle internal reporting, clean core metrics datasets, and present findings to management.\n\nKey Requirements:\n- 2+ years experience querying databases using advanced SQL joins and window functions.\n- Skilled in building interactive PowerBI or Tableau dashboards.\n- Practical knowledge of exploratory data analysis using Python or R.\n- Solid background in basic statistical concepts.\n\nBonus Points:\n- Experience writing automated scripts for data cleaning.\n- Experience in fintech or e-commerce industries.",
     "salaryRange": {
       "min": 85000,
-      "max": 115000
+      "max": 110000
     },
-    "location": "Remote",
-    "createdAt": "2026-08-01T22:40:00.000Z",
+    "location": "Chicago, IL",
+    "createdAt": "2026-08-03T16:05:19.800Z",
     "keywords": [
-      "Playwright",
-      "Cypress",
-      "JavaScript",
-      "TypeScript",
-      "CI/CD",
-      "QA Automation Engineer",
-      "Automated Testing",
-      "End-to-End Testing",
-      "Selenium",
-      "GitHub Actions",
-      "Jenkins",
-      "API Testing",
-      "Postman",
-      "Supertest",
-      "Load Testing",
-      "k6",
-      "JMeter"
+      "SQL",
+      "Excel",
+      "PowerBI",
+      "Python",
+      "Statistics",
+      "Data Analyst",
+      "Dashboarding",
+      "Business Intelligence",
+      "Data Cleaning",
+      "Reporting"
     ]
   },
   {
     "id": "008",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Mobile App Developer",
-    "companyName": "Acme Tech",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Site Reliability Engineer (SRE)",
+    "companyName": "EverGreen Tech",
     "primarySkills": [
-      "React Native",
-      "TypeScript",
-      "iOS",
-      "Android",
-      "Redux"
+      "Linux",
+      "Python",
+      "Kubernetes",
+      "Datadog",
+      "Terraform"
     ],
-    "jobDescription": "Seeking a Senior Mobile App Developer with 4+ years of cross-platform mobile development experience using React Native.\n\nKey Requirements:\n- 4+ years of commercial mobile app development experience with React Native and TypeScript.\n- Experience publishing and maintaining applications on the Apple App Store and Google Play Store.\n- Deep understanding of native iOS (Swift) and Android (Kotlin) code bridge modules.\n- Experience optimizing mobile application performance, startup times, and memory consumption.\n- Solid understanding of offline-first storage and push notification implementations.",
-    "salaryRange": {
-      "min": 105000,
-      "max": 145000
-    },
-    "location": "Remote",
-    "createdAt": "2026-08-01T22:45:00.000Z",
-    "keywords": [
-      "React Native",
-      "TypeScript",
-      "iOS",
-      "Android",
-      "Redux",
-      "Mobile App Developer",
-      "Cross-Platform Development",
-      "Apple App Store",
-      "Google Play Store",
-      "Swift",
-      "Kotlin",
-      "Native Bridge Modules",
-      "Performance Optimization",
-      "Offline-First Storage",
-      "Push Notifications"
-    ]
-  },
-  {
-    "id": "009",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Security Engineer",
-    "companyName": "Acme Tech",
-    "primarySkills": [
-      "Penetration Testing",
-      "AWS Security",
-      "OWASP",
-      "SOC 2",
-      "Python"
-    ],
-    "jobDescription": "We are seeking a Security Engineer with 5+ years of experience in application security and cloud infrastructure security.\n\nQualifications Needed:\n- 5+ years in an Information Security or Application Security role.\n- Practical experience conducting vulnerability assessments, threat modeling, and penetration testing.\n- Strong knowledge of OWASP Top 10 vulnerabilities and secure code review processes.\n- Experience securing AWS cloud workloads (IAM policies, KMS, Security Groups, GuardDuty).\n- Familiarity with compliance frameworks including SOC 2 Type II, ISO 27001, and GDPR.\n- Relevant certifications (CISSP, CEH, OSCP) preferred.",
+    "jobDescription": "Join our infrastructure group as an SRE focused on system uptime, incident response, and performance monitoring.\n\nKey Requirements:\n- 4+ years of experience supporting production web applications at scale.\n- Hands-on Unix/Linux system administration skills.\n- Deep familiarity with incident response, root cause analysis, and post-mortems.\n- Automation mindset using Python, Bash, or Go.\n\nBonus Points:\n- Experience establishing Service Level Objectives (SLOs) and Error Budgets.\n- Experience with zero-downtime database migrations.",
     "salaryRange": {
       "min": 135000,
       "max": 175000
     },
-    "location": "Austin, TX",
-    "createdAt": "2026-08-01T22:50:00.000Z",
+    "location": "Remote",
+    "createdAt": "2026-08-04T07:45:00.120Z",
     "keywords": [
-      "Penetration Testing",
-      "AWS Security",
-      "OWASP",
-      "SOC 2",
+      "Linux",
       "Python",
-      "Security Engineer",
-      "Application Security",
-      "Cloud Infrastructure Security",
-      "Information Security",
-      "Vulnerability Assessments",
-      "Threat Modeling",
-      "Secure Code Review",
-      "IAM",
-      "KMS",
-      "GuardDuty",
-      "ISO 27001",
-      "GDPR",
-      "CISSP",
-      "CEH",
-      "OSCP"
+      "Kubernetes",
+      "Datadog",
+      "Terraform",
+      "Site Reliability Engineer",
+      "SRE",
+      "Monitoring",
+      "Incident Management",
+      "Automation"
+    ]
+  },
+  {
+    "id": "009",
+    "recruiterId": "user-45ffe10b-567e-430a-8588-cf7cd809e8cb",
+    "jobTitle": "Cybersecurity Engineer",
+    "companyName": "Shield Security",
+    "primarySkills": [
+      "Python",
+      "Network Security",
+      "AWS Security",
+      "SIEM",
+      "Penetration Testing"
+    ],
+    "jobDescription": "We are looking for a Cybersecurity Engineer to protect infrastructure, lead vulnerability assessments, and handle threat detection.\n\nKey Requirements:\n- 3+ years of experience in information security, threat hunting, and system monitoring.\n- Good understanding of cloud security standards, specifically in AWS.\n- Hands-on work using SIEM tools (Splunk, Elastic) for log analysis.\n- Proficiency in writing operational security scripts using Python or Bash.\n\nBonus Points:\n- Security certifications such as CISSP, CEH, or AWS Security Specialty.\n- Penetration testing experience.",
+    "salaryRange": {
+      "min": 125000,
+      "max": 160000
+    },
+    "location": "Seattle, WA",
+    "createdAt": "2026-08-04T12:00:00.000Z",
+    "keywords": [
+      "Python",
+      "Network Security",
+      "AWS Security",
+      "SIEM",
+      "Penetration Testing",
+      "Cybersecurity Engineer",
+      "Threat Detection",
+      "Splunk",
+      "Vulnerability Assessment",
+      "Information Security"
     ]
   },
   {
     "id": "010",
-    "recruiterId": "user-1785455997534",
-    "jobTitle": "Data Engineer",
-    "companyName": "Acme Tech",
+    "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "jobTitle": "Lead Mobile Engineer (iOS/Android)",
+    "companyName": "Appify Studios",
     "primarySkills": [
-      "Python",
-      "Apache Airflow",
-      "Snowflake",
-      "dbt",
-      "SQL"
+      "Flutter",
+      "Dart",
+      "React Native",
+      "iOS",
+      "Android"
     ],
-    "jobDescription": "Looking for a Data Engineer with 4+ years of experience constructing scalable data platforms, pipeline orchestration, and enterprise data warehouses.\n\nJob Qualifications:\n- 4+ years of experience in data engineering, processing large-scale batch and streaming datasets.\n- Advanced SQL skills and solid proficiency in Python.\n- Extensive experience building pipeline orchestration using Apache Airflow.\n- Production experience with modern data stack tools such as Snowflake, dbt, and BigQuery.\n- Knowledge of data modeling techniques (Star Schema, Data Vault).",
+    "jobDescription": "We are seeking a Lead Mobile Engineer to direct app architecture across cross-platform frameworks and manage app store release setups.\n\nKey Requirements:\n- 5+ years of mobile app development using Flutter/Dart or React Native.\n- Successful track record of releasing high-traffic apps to Apple App Store and Google Play Store.\n- Understanding of mobile UI patterns, state management, and offline-first storage.\n- Ability to guide cross-functional technical teams.\n\nBonus Points:\n- Native Swift or Kotlin development experience.\n- Experience with mobile CI/CD tools like Fastlane or Bitrise.",
     "salaryRange": {
-      "min": 115000,
-      "max": 155000
+      "min": 145000,
+      "max": 185000
     },
-    "location": null,
-    "createdAt": "2026-08-01T22:52:29.080Z",
+    "location": "Remote",
+    "createdAt": "2026-08-04T18:30:10.500Z",
     "keywords": [
-      "Python",
-      "Apache Airflow",
-      "Snowflake",
-      "dbt",
-      "SQL",
-      "Data Engineer",
-      "Data Engineering",
-      "Pipeline Orchestration",
-      "Scalable Data Platforms",
-      "Enterprise Data Warehouses",
-      "Batch Datasets",
-      "Streaming Datasets",
-      "BigQuery",
-      "Data Modeling",
-      "Star Schema",
-      "Data Vault",
-      "Modern Data Stack"
+      "Flutter",
+      "Dart",
+      "React Native",
+      "iOS",
+      "Android",
+      "Lead Mobile Engineer",
+      "Mobile Development",
+      "Swift",
+      "Kotlin",
+      "App Store Deployment"
     ]
   }
 ]
