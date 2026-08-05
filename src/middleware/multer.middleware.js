@@ -1,5 +1,6 @@
 import multer from "multer";
 import path from "node:path";
+import fs from "fs"
 
 
 export class ValidationError extends Error{
@@ -7,6 +8,12 @@ export class ValidationError extends Error{
         super(message);
         this.name = "ValidationError"
     }
+}
+
+const uploadDir = path.join(import.meta.dirname, '../uploads');
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
 }
 
 const storageOptions = {
