@@ -18,14 +18,17 @@ export default async function handleFormRoute(req, res){
         thisUser.hasResume = true
         
 
-        candidateData.id = uid;
-        candidateData.updatedAt= new Date();
+        const candidateObj = {
+            id: uid, 
+            updatedAt: new Date(),
+            ...candidateData
+        };
 
         let getCVIndex = CAND_CV.findIndex(cand => cand.id === uid);
 
         getCVIndex = getCVIndex !== -1 ? getCVIndex : CAND_CV.length;
 
-        CAND_CV[getCVIndex] = candidateData;
+        CAND_CV[getCVIndex] = candidateObj;
 
         await fs.writeFile(CAND_CV_PATH, JSON.stringify(CAND_CV, null, 2));
         await fs.writeFile(USERS_PATH, JSON.stringify(USERS, null, 2));

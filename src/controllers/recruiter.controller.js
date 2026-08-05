@@ -6,8 +6,10 @@ import { success } from "zod";
 
 const RECRUITER_JOBS_PATH = path.join(import.meta.dirname, "../data/jobs.json");
 const CANDIDATE_DATA_PATH = path.join(import.meta.dirname, "../data/candidates_resume.json");
+const QUESTIONS_PATH = path.join(import.meta.dirname, "../data/questions.json");
 
 const recruiterJobs = JSON.parse(await fs.readFile(RECRUITER_JOBS_PATH, "utf8"));
+const questions = JSON.parse(await fs.readFile(QUESTIONS_PATH, "utf8"));
 
 
 function scoreCandidateAgainstJob(job, candidate) {
@@ -152,7 +154,7 @@ export async function generateMockInterviewQuestions(req, res) {
     const existing = recruiterJobs.find(job => job.recruiterId === recruiterId && job.id === jobId);
 
     if(!existing){
-      return res.status(404).json({
+      return res.status(200).json({
         success: false,
         error: "Job not found",
       })
@@ -182,34 +184,30 @@ export async function generateMockInterviewQuestions(req, res) {
   }
 }
 
-// export async function matchCandidatesToJob(req, res) {
-//   try {
-//     if (req.user?.role !== "recruiter") {
-//       return res.status(403).json({ success: false, error: "Only recruiters can rank candidates" });
-//     }
+export async function postRecruiterQuestion(req, res){
+  try{
+    const { jobId } = req.params;
+    const recruiterId = req.user.uid;
+    const validateQuestions = req.body;
 
-//     const { jobId } = req.params;
-//     const recruiterJobsData = await readRecruiterJobs();
-//     const job = (recruiterJobsData.jobs || []).find((item) => item.id === jobId);
+    let questIndex = questions.findIndex(quest => quest.jobId === jobId);
 
-//     if (!job) {
-//       return res.status(404).json({ success: false, error: "Job not found" });
-//     }
+    questIndex = questIndex !== -1 ? questIndex : questions.length;
 
-//     const candidateData = JSON.parse(await fs.readFile(CANDIDATE_DATA_PATH, "utf8"));
-//     const rankedCandidates = candidateData
-//       .filter((candidate) => candidate?.basics?.fullName)
-//       .map((candidate) => scoreCandidateAgainstJob(job, candidate))
-//       .sort((a, b) => b.score - a.score)
-//       .slice(0, 10);
+    questions[questIndex] = {jobId, questions: validateQuestions};
 
-//     return res.status(200).json({
-//       success: true,
-//       jobTitle: job.jobTitle,
-//       rankedCandidates
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ success: false, error: "Failed to rank candidates" });
-//   }
-// }
+    await fs.writeFile(QUESTIONS_PATH, JSON.stringify(questions, null, 2));
+    
+    return res.status(201).json({
+      success: true,
+      message: "Questions successfully saved"
+    });
+
+  }
+  catch(err){
+    return res.status(500).json({
+      success: false,
+      error: 'Server error while saving questions'
+    });
+  }
+}
