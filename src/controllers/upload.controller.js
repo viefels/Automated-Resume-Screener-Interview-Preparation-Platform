@@ -61,7 +61,7 @@ export default async function uploadRouteCall(req, res) {
         
         await fs.writeFile(CAND_CV_PATH, JSON.stringify(CAND_CV, null, 2));
         
-        const {feedback, keywords, ...safecand} = candidateObj;
+        const {feedback, keywords, id, updatedAt, ...safecand} = candidateObj;
         
         return res.status(200).json({
             success: true,
