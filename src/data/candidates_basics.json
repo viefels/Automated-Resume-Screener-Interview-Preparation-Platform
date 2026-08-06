@@ -14,7 +14,6 @@
     "passwordHash": "$2b$10$jmQtSpbu0TbxvFqMLMgeE.YBK.Rm8eddhx1zqyNIFvryjtg6vIsu2",
     "role": "candidate",
     "hasResume": false,
-    "resumeOverview": null,
     "createdAt": "2026-08-05T00:20:41.351Z"
   },
   {
@@ -22,7 +21,6 @@
     "email": "oliveiramigu@angel.com",
     "passwordHash": "$2b$10$GDjYKgvQ0yWwRczlTO2Wh.dxLkRNu4EN6FEFxGbDonOs7hCp5IFpm",
     "role": "recruiter",
-    "jobOverview": null,
     "createdAt": "2026-08-05T00:28:47.889Z"
   }
 ]

@@ -4,13 +4,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Data Scientist",
     "companyName": "DataPulse Analytics",
-    "primarySkills": [
-      "Python",
-      "SQL",
-      "Scikit-Learn",
-      "Pandas",
-      "Tableau"
-    ],
     "jobDescription": "We are seeking a Data Scientist to help turn complex dataset patterns into actionable business insights. You will work closely with product and marketing teams to build predictive models and automated dashboards.\n\nKey Requirements:\n- 3+ years of experience analyzing large datasets using Python and SQL.\n- Practical experience building machine learning models for classification and regression.\n- Ability to turn complex technical output into clear business insights.\n- Expertise in data visualization tools like Tableau or PowerBI.\n\nBonus Points:\n- Knowledge of BigQuery or Snowflake.\n- Experience running A/B experiments at scale.",
     "salaryRange": {
       "min": 115000,
@@ -36,13 +29,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Backend Software Engineer",
     "companyName": "CloudScale Systems",
-    "primarySkills": [
-      "Node.js",
-      "Go",
-      "PostgreSQL",
-      "Docker",
-      "Redis"
-    ],
     "jobDescription": "We need a Backend Engineer to build scalable microservices for our core payment infrastructure. You will handle database architecture, system reliability, and API integrations.\n\nKey Requirements:\n- 4+ years of backend development experience with Node.js or Go.\n- Solid experience with relational databases like PostgreSQL and caching with Redis.\n- Hands-on practice building RESTful APIs and gRPC services.\n- Deep understanding of system performance and concurrency.\n\nBonus Points:\n- Experience handling financial transactions or payment gateway integrations.\n- Familiarity with Kubernetes.",
     "salaryRange": {
       "min": 125000,
@@ -68,13 +54,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Data Engineer",
     "companyName": "StreamData Co",
-    "primarySkills": [
-      "Apache Spark",
-      "Python",
-      "SQL",
-      "Airflow",
-      "Snowflake"
-    ],
     "jobDescription": "Looking for a Data Engineer to design, build, and maintain real-time data pipelines. You will optimize our data warehouse and make sure data is clean and accessible across the company.\n\nKey Requirements:\n- 4+ years building ETL and ELT data pipelines.\n- Advanced SQL skills and proficiency in Python.\n- Direct experience with Apache Spark, Airflow, and cloud data warehouses like Snowflake or Redshift.\n- Practice with data modeling principles and pipeline automation.\n\nBonus Points:\n- Familiarity with streaming tools like Apache Kafka.\n- Knowledge of dbt for data transformation.",
     "salaryRange": {
       "min": 130000,
@@ -100,13 +79,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "DevOps / Infrastructure Engineer",
     "companyName": "Nexus Cloud",
-    "primarySkills": [
-      "AWS",
-      "Terraform",
-      "Kubernetes",
-      "Docker",
-      "CI/CD"
-    ],
     "jobDescription": "Join our team as a DevOps Engineer to manage our cloud infrastructure, scale automated pipelines, and maintain uptime for microservices.\n\nKey Requirements:\n- 3+ years running cloud operations on AWS.\n- Production experience using Terraform for Infrastructure as Code.\n- Expertise in Kubernetes management and container orchestration.\n- Solid background with CI/CD tools like GitHub Actions or GitLab CI.\n\nBonus Points:\n- Experience with monitoring setups like Prometheus and Grafana.\n- AWS DevOps certification.",
     "salaryRange": {
       "min": 120000,
@@ -132,13 +104,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Machine Learning Engineer",
     "companyName": "AI Vision Labs",
-    "primarySkills": [
-      "PyTorch",
-      "Python",
-      "MLflow",
-      "FastAPI",
-      "Docker"
-    ],
     "jobDescription": "We are hiring a Machine Learning Engineer to take computer vision models from research into production environment APIs. You will focus on model deployment, monitoring, and optimization.\n\nKey Requirements:\n- 3+ years writing Python for deep learning frameworks (PyTorch or TensorFlow).\n- Track record of deploying ML models into real-time production systems.\n- Experience wrapping models in light microservices using FastAPI or Flask.\n- Familiarity with MLOps pipelines using MLflow or Weights & Biases.\n\nBonus Points:\n- Experience running model quantization or edge deployments.\n- Experience with GPU cluster management.",
     "salaryRange": {
       "min": 140000,
@@ -164,13 +129,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Full Stack Engineer",
     "companyName": "BrightApp Solutions",
-    "primarySkills": [
-      "React",
-      "Node.js",
-      "TypeScript",
-      "MongoDB",
-      "Express"
-    ],
     "jobDescription": "We need a product-minded Full Stack Engineer to lead features from UI design to database integrations. You will work across modern React codebases and Node.js microservices.\n\nKey Requirements:\n- 3+ years building full stack web apps with React, Node.js, and TypeScript.\n- Comfortable designing REST APIs and configuring NoSQL databases like MongoDB.\n- Clear understanding of authorization flows, user sessions, and web security.\n- Skill with Git workflows and modern deployment practices.\n\nBonus Points:\n- Native mobile app development with React Native.\n- Experience in consumer SaaS products.",
     "salaryRange": {
       "min": 110000,
@@ -196,13 +154,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Data Analyst",
     "companyName": "Metrics HQ",
-    "primarySkills": [
-      "SQL",
-      "Excel",
-      "PowerBI",
-      "Python",
-      "Statistics"
-    ],
     "jobDescription": "Looking for a Data Analyst to handle internal reporting, clean core metrics datasets, and present findings to management.\n\nKey Requirements:\n- 2+ years experience querying databases using advanced SQL joins and window functions.\n- Skilled in building interactive PowerBI or Tableau dashboards.\n- Practical knowledge of exploratory data analysis using Python or R.\n- Solid background in basic statistical concepts.\n\nBonus Points:\n- Experience writing automated scripts for data cleaning.\n- Experience in fintech or e-commerce industries.",
     "salaryRange": {
       "min": 85000,
@@ -228,13 +179,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Site Reliability Engineer (SRE)",
     "companyName": "EverGreen Tech",
-    "primarySkills": [
-      "Linux",
-      "Python",
-      "Kubernetes",
-      "Datadog",
-      "Terraform"
-    ],
     "jobDescription": "Join our infrastructure group as an SRE focused on system uptime, incident response, and performance monitoring.\n\nKey Requirements:\n- 4+ years of experience supporting production web applications at scale.\n- Hands-on Unix/Linux system administration skills.\n- Deep familiarity with incident response, root cause analysis, and post-mortems.\n- Automation mindset using Python, Bash, or Go.\n\nBonus Points:\n- Experience establishing Service Level Objectives (SLOs) and Error Budgets.\n- Experience with zero-downtime database migrations.",
     "salaryRange": {
       "min": 135000,
@@ -260,13 +204,6 @@
     "recruiterId": "user-45ffe10b-567e-430a-8588-cf7cd809e8cb",
     "jobTitle": "Cybersecurity Engineer",
     "companyName": "Shield Security",
-    "primarySkills": [
-      "Python",
-      "Network Security",
-      "AWS Security",
-      "SIEM",
-      "Penetration Testing"
-    ],
     "jobDescription": "We are looking for a Cybersecurity Engineer to protect infrastructure, lead vulnerability assessments, and handle threat detection.\n\nKey Requirements:\n- 3+ years of experience in information security, threat hunting, and system monitoring.\n- Good understanding of cloud security standards, specifically in AWS.\n- Hands-on work using SIEM tools (Splunk, Elastic) for log analysis.\n- Proficiency in writing operational security scripts using Python or Bash.\n\nBonus Points:\n- Security certifications such as CISSP, CEH, or AWS Security Specialty.\n- Penetration testing experience.",
     "salaryRange": {
       "min": 125000,
@@ -292,13 +229,6 @@
     "recruiterId": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
     "jobTitle": "Lead Mobile Engineer (iOS/Android)",
     "companyName": "Appify Studios",
-    "primarySkills": [
-      "Flutter",
-      "Dart",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
     "jobDescription": "We are seeking a Lead Mobile Engineer to direct app architecture across cross-platform frameworks and manage app store release setups.\n\nKey Requirements:\n- 5+ years of mobile app development using Flutter/Dart or React Native.\n- Successful track record of releasing high-traffic apps to Apple App Store and Google Play Store.\n- Understanding of mobile UI patterns, state management, and offline-first storage.\n- Ability to guide cross-functional technical teams.\n\nBonus Points:\n- Native Swift or Kotlin development experience.\n- Experience with mobile CI/CD tools like Fastlane or Bitrise.",
     "salaryRange": {
       "min": 145000,

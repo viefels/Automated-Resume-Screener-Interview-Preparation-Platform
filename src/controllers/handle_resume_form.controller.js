@@ -1,37 +1,20 @@
-import fs from "fs/promises";
-import path from "node:path";
-
-
-const CAND_CV_PATH = path.join(import.meta.dirname, "../data/candidates_resume.json");
-const USERS_PATH =  path.join(import.meta.dirname, "../data/candidates_basics.json");
-
-
-const CAND_CV = JSON.parse(await fs.readFile(CAND_CV_PATH, "utf8"));
-const USERS = JSON.parse(await fs.readFile(USERS_PATH, "utf8"));
+import { User, Resume } from "../models/index.js";
 
 export default async function handleFormRoute(req, res){
     try{
         const candidateData = req.body.validatedCandidate;
-        const {uid, role} = req.user;
+        const {uid} = req.user;
 
-        const thisUser = USERS.find(user => user.id === uid)
-        thisUser.hasResume = true
+        await User.update({ hasResume: true }, { where: { id: uid } });
         
+        const [resume, created] = await Resume.findOrCreate({
+            where: { userId: uid },
+            defaults: { ...candidateData }
+        });
 
-        const candidateObj = {
-            id: uid, 
-            updatedAt: new Date(),
-            ...candidateData
-        };
-
-        let getCVIndex = CAND_CV.findIndex(cand => cand.id === uid);
-
-        getCVIndex = getCVIndex !== -1 ? getCVIndex : CAND_CV.length;
-
-        CAND_CV[getCVIndex] = candidateObj;
-
-        await fs.writeFile(CAND_CV_PATH, JSON.stringify(CAND_CV, null, 2));
-        await fs.writeFile(USERS_PATH, JSON.stringify(USERS, null, 2));
+        if (!created) {
+            await resume.update(candidateData);
+        }
         
         return res.status(201).json({
             success: true,
