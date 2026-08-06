@@ -1,0 +1,175 @@
+[
+  {
+    "jobId": "009",
+    "questions": [
+      {
+        "id": "q1",
+        "category": "SIEM & Log Analysis",
+        "question": "How do you construct a SIEM search query in Splunk or Elastic to detect a potential credential stuffing attack on an authentication endpoint?",
+        "context": "Evaluates hands-on log analysis skills using industry-standard SIEM tools and the candidate's understanding of authentication threat patterns.",
+        "hints": [
+          "Focus on high volume of failed logins from distinct IPs targeting multiple accounts within a short timeframe.",
+          "Mention specific fields like source IP, user agent, HTTP status codes, and failure counts.",
+          "Discuss thresholding and aggregation techniques in Splunk SPL or Elasticsearch KQL/EQL."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Shows minimal understanding of SIEM concepts; unable to explain basic query logic.",
+            "2": "Understands credential stuffing theoretically but struggles to formulate specific SIEM queries or logic.",
+            "3": "Provides a working basic query structure identifying failed logins by IP or account threshold.",
+            "4": "Formulates an accurate, optimized query grouping by IP/User Agent with time-charting and dynamic thresholding.",
+            "5": "Demonstrates advanced query crafting, accounts for false positives (e.g., NAT gateways), and details follow-up automated alerting/response."
+          }
+        }
+      },
+      {
+        "id": "q2",
+        "category": "AWS Security",
+        "question": "If AWS GuardDuty triggers an alert stating that an IAM access key associated with a production EC2 instance is being used from an unknown external IP address, what steps do you take to investigate and remediate?",
+        "context": "Assesses practical AWS security knowledge, incident response procedures, and familiarity with AWS native security tools.",
+        "hints": [
+          "Consider immediate containment actions like revoking active sessions or disabling keys.",
+          "Explain how to check CloudTrail logs to trace actions performed by the compromised key.",
+          "Address root cause isolation (e.g., exposed instance metadata service, hardcoded credentials)."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Fails to identify appropriate AWS tools or escalation pathways for key compromise.",
+            "2": "Suggests basic remediation like deleting the key, but misses log analysis or root cause investigation.",
+            "3": "Outlines a sound standard incident response process: containment (key deactivation), investigation (CloudTrail), and remediation.",
+            "4": "Provides a comprehensive response including CloudTrail analysis, evaluation of Instance Metadata Service (IMDSv2), and policy adjustments.",
+            "5": "Covers end-to-end response including automated containment scripts (AWS Lambda/GuardDuty integration), forensic logging, and post-incident prevention."
+          }
+        }
+      },
+      {
+        "id": "q3",
+        "category": "Python Automation",
+        "question": "Walk me through how you would write a Python script using `boto3` to automatically identify and flag all publicly accessible S3 buckets across an AWS organization.",
+        "context": "Evaluates proficiency in writing operational security scripts using Python to automate security audits in AWS.",
+        "hints": [
+          "Mention key `boto3` methods for checking S3 bucket ACLs and Public Access Blocks.",
+          "Discuss error handling, multi-region/multi-account handling, and reporting formats (JSON/CSV).",
+          "Consider how to execute the script securely without embedding static credentials."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Lacks basic Python or AWS SDK knowledge required to script cloud interactions.",
+            "2": "Understands `boto3` conceptually but cannot explain how to inspect S3 bucket policies or access controls programmatically.",
+            "3": "Outlines a working Python script that iterates through buckets and checks public ACLs or bucket policies.",
+            "4": "Describes a robust script evaluating both bucket policies and S3 Block Public Access settings with proper exception handling.",
+            "5": "Designs an efficient, scalable script utilizing IAM roles, handling multi-account pagination, and integrating with notification queues (e.g., SNS or Slack alerts)."
+          }
+        }
+      },
+      {
+        "id": "q4",
+        "category": "Threat Hunting",
+        "question": "Describe your methodology for conducting a proactive threat hunt for lateral movement within an enterprise environment.",
+        "context": "Tests candidate's experience in proactive threat hunting, knowledge of attacker techniques (MITRE ATT&CK), and log requirements.",
+        "hints": [
+          "Reference MITRE ATT&CK techniques associated with lateral movement (e.g., Pass-the-Hash, PsExec, SSH key misuse, RDP hijacking).",
+          "Discuss data sources required such as Windows Event Logs (4624/4625), endpoint EDR, and network flow logs.",
+          "Explain how hypothesis-driven hunting differs from reactive alert triage."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Confuses threat hunting with basic alert monitoring or reactive patch management.",
+            "2": "Mentions basic network logs but lacks a structured framework or understanding of lateral movement indicators.",
+            "3": "Outlines a valid hypothesis-based threat hunting process referencing core logs (e.g., authentication, process creation) and basic attacker techniques.",
+            "4": "Aligns hunting strategies directly with MITRE ATT&CK matrix, specifying detailed event IDs and behavioral anomalies.",
+            "5": "Demonstrates advanced hunting techniques combining endpoint, network, and cloud telemetry, and details how hunt results feed back into automated detection engineering."
+          }
+        }
+      },
+      {
+        "id": "q5",
+        "category": "Penetration Testing & Vulnerability Management",
+        "question": "How do you prioritize and validate critical vulnerabilities identified by an automated network/infrastructure vulnerability scanner before reporting them to engineering teams?",
+        "context": "Assesses hands-on vulnerability assessment experience, penetration testing mindset, and ability to eliminate false positives.",
+        "hints": [
+          "Distinguish between scan severity scores (CVSS) and actual contextual risk to the business.",
+          "Explain techniques for manual verification/proof-of-concept testing without causing downtime.",
+          "Discuss strategies to minimize alert fatigue for development and operations teams."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Relies entirely on raw scanner output without contextual analysis or validation.",
+            "2": "Understands CVSS scores but relies heavily on manual effort without clear prioritization criteria.",
+            "3": "Explains practical steps for manual validation (e.g., using safe exploits or banner grabbing) and contextual risk scoring.",
+            "4": "Demonstrates strong pen-testing methodology to verify exploitability while explaining contextual factors like network exposure and compensating controls.",
+            "5": "Articulates a refined vulnerability pipeline integrating automated validation, risk-weighted scoring, clear remediation advice, and actionable PoC demonstrations."
+          }
+        }
+      },
+      {
+        "id": "q6",
+        "category": "Network Security",
+        "question": "How do you approach securing microservices communicating across containerized environments (e.g., Kubernetes or AWS ECS) at the network layer?",
+        "context": "Evaluates network security expertise in modern containerized cloud architectures.",
+        "hints": [
+          "Mention network segmentation policies, service meshes (Istio/Linkerd), and mTLS.",
+          "Discuss AWS VPC CNI, security groups for pods/tasks, and zero-trust principles.",
+          "Include monitoring network traffic flow logs for anomalous container communication."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Has limited understanding of network security outside traditional perimeter firewalls.",
+            "2": "Understands basic cloud network concepts (VPCs, Security Groups) but struggles with microservices security.",
+            "3": "Describes effective network segmentation techniques using container network policies and mTLS.",
+            "4": "Provides clear architecture strategies utilizing Service Mesh for encryption in transit, strict ingress/egress controls, and flow log analysis.",
+            "5": "Designs a comprehensive zero-trust container network security architecture integrating identity-aware proxies, dynamic policy enforcement, and runtime anomaly detection."
+          }
+        }
+      },
+      {
+        "id": "q7",
+        "category": "Behavioral & Incident Response",
+        "question": "Describe a time when you were handling an active security incident and encountered pushback from a key operational or development team regarding containment measures (e.g., taking a system offline). How did you manage the situation?",
+        "context": "Tests communication skills, business acumen, crisis management, and ability to balance risk against operational downtime.",
+        "hints": [
+          "Use the STAR method (Situation, Task, Action, Result).",
+          "Focus on clear risk communication, finding temporary compensating controls, and adhering to incident leadership processes.",
+          "Highlight business alignment and post-incident relationship management."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Displays poor communication skills or advocates for ignoring business impacts completely.",
+            "2": "Gives a vague account without demonstrating effective negotiation or clear risk evaluation.",
+            "3": "Describes a specific situation where risk was explained clearly, resulting in a mutually agreed containment approach.",
+            "4": "Demonstrates strong leadership, presenting alternative mitigation options to minimize downtime while maintaining effective containment.",
+            "5": "Exemplifies high emotional intelligence and executive communication under pressure, leveraging established incident response governance and building lasting trust with operations."
+          }
+        }
+      },
+      {
+        "id": "q8",
+        "category": "Operational Scripting & Automation",
+        "question": "Can you share an example of an operational security task you completely automated using Bash or Python? What was the problem, how did you build the script, and what was the impact?",
+        "context": "Evaluates hands-on experience in scripting for operational efficiency and security task automation.",
+        "hints": [
+          "Pick a practical security problem: log parsing, certificate renewal tracking, automated patch verification, or IP reputation enrichment.",
+          "Highlight script architecture, dependencies, error handling, and deployment (e.g., cron job, Lambda).",
+          "Quantify time saved or reduction in manual oversight."
+        ],
+        "evaluationRubric": {
+          "scoringScale": "1-5",
+          "levels": {
+            "1": "Unable to provide a concrete example of self-authored security scripts.",
+            "2": "Describes simple, one-liner administrative scripts with limited security operational value.",
+            "3": "Provides a clear example of a Python/Bash script solving an operational security issue with measurable efficiency gains.",
+            "4": "Details a well-architected script featuring proper logging, robust error handling, secure credential management, and clear impact metrics.",
+            "5": "Describes an enterprise-grade automation solution integrated into existing workflows (e.g., CI/CD, SIEM API, SOAR), demonstrating strong software engineering standards."
+          }
+        }
+      }
+    ]
+  }
+]

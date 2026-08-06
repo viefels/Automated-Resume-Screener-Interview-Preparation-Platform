@@ -1,0 +1,28 @@
+[
+  {
+    "id": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "email": "oliveiramiguel@angel.com",
+    "passwordHash": "$2b$10$BqSbjnzQI9ElWhdXWnYFde6zfmiYHxi/Fe.uUK5V.gddy99CFSfVa",
+    "role": "candidate",
+    "hasResume": false,
+    "resumeOverview": null,
+    "createdAt": "2026-08-04T15:33:36.698Z"
+  },
+  {
+    "id": "user-0f2843df-7e52-4e93-bd14-2df71738e16a",
+    "email": "oliveiramigul@angel.com",
+    "passwordHash": "$2b$10$jmQtSpbu0TbxvFqMLMgeE.YBK.Rm8eddhx1zqyNIFvryjtg6vIsu2",
+    "role": "candidate",
+    "hasResume": false,
+    "resumeOverview": null,
+    "createdAt": "2026-08-05T00:20:41.351Z"
+  },
+  {
+    "id": "user-45ffe10b-567e-430a-8588-cf7cd809e8cb",
+    "email": "oliveiramigu@angel.com",
+    "passwordHash": "$2b$10$GDjYKgvQ0yWwRczlTO2Wh.dxLkRNu4EN6FEFxGbDonOs7hCp5IFpm",
+    "role": "recruiter",
+    "jobOverview": null,
+    "createdAt": "2026-08-05T00:28:47.889Z"
+  }
+]

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-[#c9d1d9] flex items-center justify-center font-sans overflow-hidden antialiased">
+
+ 
+  <div class="absolute w-[300px] h-[300px] bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <main class="z-10 text-center p-8 max-w-md">
+        
+        <h1 class="text-8xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent animate-pulse [animation-duration:2.5s] leading-none mb-4">
+        404
+        </h1>
+
+        <h2 class="text-2xl font-semibold text-gray-100 mb-2">
+        Endpoint Not Found
+        </h2>
+
+        <p class="text-gray-400 text-sm leading-relaxed mb-4">
+        The path or API route you requested does not exist or has moved.
+        </p>
+
+        <div class="flex items-center justify-center gap-4">
+            <a href="/api/login" class="px-6 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-3xl hover:bg-indigo-500 transition-colors">
+                Go Home
+            </a>
+            <button onclick="history.back()" class="px-6 py-3 text-sm font-medium text-slate-100 border border-slate-50 rounded-3xl hover:bg-slate-950 hover:text-white transition-colors">
+                Go Back
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>

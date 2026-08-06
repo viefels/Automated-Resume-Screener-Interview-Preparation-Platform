@@ -1,5 +1,6 @@
 import multer from "multer";
 import path from "node:path";
+import fs from "fs"
 
 
 export class ValidationError extends Error{
@@ -9,9 +10,15 @@ export class ValidationError extends Error{
     }
 }
 
+const uploadDir = path.join(import.meta.dirname, '../uploads');
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storageOptions = {
     destination: function (req, file, cb){
-        cb(null, path.join(import.meta.dirname, "../uploads"))
+        cb(null, path.join(uploadDir, "../uploads"))
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + "-" + file.originalname);
