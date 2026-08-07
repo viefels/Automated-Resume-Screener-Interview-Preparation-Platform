@@ -12,7 +12,7 @@ configDotenv({ path: "../../.env" });
 const  userSchema = z.object({
     email: z.string("Email is required").trim().email("Please enter a valid email").toLowerCase(),
     password: z.string("Password is required").trim().min(8, "Password must be at least 8 characters long"),
-    role: z.enum(["candidate", "recruiter"], "Please provide a valid role")
+    role: z.enum(["candidate", "recruiter"], "Please provide a valid role").optional()
 })
 
 export function validateUserDetails(req, res, next){
