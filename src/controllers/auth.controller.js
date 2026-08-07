@@ -64,10 +64,14 @@ export async function login(req, res){
         }
         const {id, hasResume} = cand;
         
-       
+       const cvDetails = {};
+
         if(hasResume){
             const candCV = await Resume.findOne({ where: { userId: id } });
-            const { keywords , createdAt, userId, ...safecand} = candCV.toJSON();
+            const { keywords , createdAt, userId, ...safecand } = candCV.toJSON();
+
+            cvDetails["targetRole"] = safecand.feedback?.targetRole;
+            cvDetails["overallMatch"] = safecand.feedback?.overallMatch;
         }
 
         
@@ -84,10 +88,7 @@ export async function login(req, res){
             token: token,
             message: "Logged In successfully",
             profile: { email, role, hasResume },
-            cvDetails: hasResume ? {
-                targetRole: safecand.feedback.targetRole,
-                overallMatch: safecand.feedback.overallMatch
-            } : null
+            cvDetails
         })
     } 
     catch(err){
