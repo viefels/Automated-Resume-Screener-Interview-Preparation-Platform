@@ -41,6 +41,7 @@ Create a `.env` file in the project root with the following variables:
 PORT=3000
 JWT_SECRET=your-secret-key
 GEMINI_API_KEY=your-gemini-api-key
+DATABASE_URL=postgres://user:password@dpg-xxx-a.render.com/dbname
 ```
 
 ### Run Locally
