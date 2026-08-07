@@ -1,4 +1,4 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize, DataTypes } from 'sequelize';
 import { configDotenv } from "dotenv";
 configDotenv({ path: "../../.env" });
 
@@ -9,12 +9,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: 'postgres',
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false // This allows connections to databases with self-signed certificates
-      }
+    dialect: 'postgres'
     }
   }
 );
