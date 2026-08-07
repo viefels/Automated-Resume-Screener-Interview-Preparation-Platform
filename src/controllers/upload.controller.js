@@ -34,6 +34,7 @@ export default async function uploadRouteCall(req, res) {
         await User.update({ hasResume: true }, { where: { id: uid } });
 
         const candidate = await handlePromptRes(prompt);
+        console.log()
         
         const candidateObj = {
             ...candidate.candidate
