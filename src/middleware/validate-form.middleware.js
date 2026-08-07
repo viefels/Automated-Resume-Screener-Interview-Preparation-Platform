@@ -94,9 +94,7 @@ export default function validateResumeData(req, res, next){
             "language": stringTrim,
             "fluency": stringTrim.nullish()
         }
-        ),"Please provide a valid value").nonempty("Please provide at least one language spoken"),
-        
-        "feedback": z.object()
+        ),"Please provide a valid value").nonempty("Please provide at least one language spoken")
     
         })
     })

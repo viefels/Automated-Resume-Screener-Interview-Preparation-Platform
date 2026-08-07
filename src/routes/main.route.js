@@ -13,7 +13,6 @@ import validateQuestions from "../middleware/validate_questions.js";
 import getScoreController from "../controllers/get_score.controller.js";
 import getCandQuestions from "../controllers/get_candidate_questions.controller.js";
 
-import updateDB from "../lib/db_handler.js";
 
 
 const router = express.Router();

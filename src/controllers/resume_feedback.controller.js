@@ -1,25 +1,20 @@
-import fs from "fs/promises";
-import path from "node:path";
+import { Resume } from "../models/index.js";
 
-
-const RECRUITER_JOBS_PATH = path.join(import.meta.dirname, "../data/jobs.json");
-const recruiterJobs = JSON.parse(await fs.readFile(RECRUITER_JOBS_PATH, "utf8"));
-
-export default function getResumeFeedback(req, res){
+export default async function getResumeFeedback(req, res){
     try{
         const userId = req.user.uid;
-        const candidate = CAND_CV.find(c => c.id === userId);
+        const candidate = await Resume.findOne({ where: { userId } });
 
         if(!candidate){
             return res.status(404).json({
                 success:false,
                 error: "Candidate resume not uploaded yet"
-            })
+            });
         }
         return res.status(200).json({
             success: true,
             data: candidate.feedback
-        })
+        });
     }
     catch(err){
         return res.status(500).json({ 
