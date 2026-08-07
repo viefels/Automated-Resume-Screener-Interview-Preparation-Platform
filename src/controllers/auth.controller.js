@@ -63,10 +63,14 @@ export async function login(req, res){
             });
         }
         const {id, hasResume} = cand;
-        const candCV = await Resume.findOne({ where: { userId: id } });
+        
        
+        if(hasResume){
+            const candCV = await Resume.findOne({ where: { userId: id } });
+            const { keywords , createdAt, userId, ...safecand} = candCV.toJSON();
+        }
 
-        const { keywords , createdAt, userId, ...safecand} = candCV.toJSON();
+        
 
         const tokenPayLoad = {
             uid: id,
