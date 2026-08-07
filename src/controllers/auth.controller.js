@@ -65,6 +65,8 @@ export async function login(req, res){
         const {id, hasResume} = cand;
         const candCV = await Resume.findOne({ where: { userId: id } });
 
+        const {feedback, keywords , createdAt, userId, ...safecand} = candCV.toJSON();
+
         const tokenPayLoad = {
             uid: id,
             role: role
@@ -77,7 +79,10 @@ export async function login(req, res){
             token: token,
             message: "Logged In successfully",
             profile: { email, role, hasResume },
-            cvDetails: candCV || null
+            cvDetails: {
+                targetRole: safecand.feedback.targetRole,
+                overallMatch: safecand.feedback.overallMatch
+            } || null
         })
     } 
     catch(err){
