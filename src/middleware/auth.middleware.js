@@ -9,45 +9,47 @@ configDotenv({ path: "../../.env" });
 
 
 
-const  userSchema = z.object({
+export const  userSchemaRegister = z.object({
     email: z.string("Email is required").trim().email("Please enter a valid email").toLowerCase(),
     password: z.string("Password is required").trim().min(8, "Password must be at least 8 characters long"),
-    role: z.enum(["candidate", "recruiter"], "Please provide a valid role").optional()
+    role: z.enum(["candidate", "recruiter"], "Please provide a valid role")
 })
-
-export function validateUserDetails(req, res, next){
-    if(!req.body){
-        return res.status(400).json({
-            success: false,
-            error: "Please provide a request"
-        });
-    }
-    
-    const result = userSchema.safeParse(req.body);
-    
-    if(!result.success){
-        const getNestedErrors = (error) => {
-            const formattedErrors = {};
-
-            for (const issue of error.issues) {
-                const path = issue.path.join('.'); 
-                if (!formattedErrors[path]) {
-                formattedErrors[path] = [];
-                }
-                formattedErrors[path].push(issue.message);
-            }
-
-            return formattedErrors;
-        };
-
-        return res.status(400).json({
-            success: result.success,
-            error: getNestedErrors(result.error)
-        });
+export const userSchemaLogin = userSchemaRegister.omit({ role: true });
+export function validateUserDetails(schema){
+    return(req, res, next) =>{
+        if(!req.body){
+            return res.status(400).json({
+                success: false,
+                error: "Please provide a request"
+            });
+        }
         
+        const result = schema.safeParse(req.body);
+        
+        if(!result.success){
+            const getNestedErrors = (error) => {
+                const formattedErrors = {};
+
+                for (const issue of error.issues) {
+                    const path = issue.path.join('.'); 
+                    if (!formattedErrors[path]) {
+                    formattedErrors[path] = [];
+                    }
+                    formattedErrors[path].push(issue.message);
+                }
+
+                return formattedErrors;
+            };
+
+            return res.status(400).json({
+                success: result.success,
+                error: getNestedErrors(result.error)
+            });
+            
+        }
+        req.body = result.data;
+        next()
     }
-    req.body = result.data;
-    next()
 }
 
 export function isAuthenticated(req, res, next){

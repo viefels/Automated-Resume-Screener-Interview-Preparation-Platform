@@ -20,8 +20,8 @@ const router = express.Router();
 
 
 //auth
-router.post("/register", user.validateUserDetails, userController.register);
-router.post("/login", user.validateUserDetails, userController.login);
+router.post("/register", user.validateUserDetails(user.userSchemaRegister), userController.register);
+router.post("/login", user.validateUserDetails(user.userSchemaLogin), userController.login);
 
 //candidate
 router.put("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
