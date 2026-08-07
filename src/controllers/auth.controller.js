@@ -44,9 +44,9 @@ export async function register(req, res){
 
 export async function login(req, res){
     try{
-        const {email, password, role} = req.body;
+        const {email, password} = req.body;
         
-        const cand = await User.findOne({ where: { email, role } });
+        const cand = await User.findOne({ where: { email } });
         
         if(!cand){
             return res.status(400).json({
@@ -55,6 +55,7 @@ export async function login(req, res){
             });
         }
 
+        const role = cand.role
         const isPsw = await bcrypt.compare(password, cand.passwordHash);
         if(!isPsw){
             return res.status(400).json({

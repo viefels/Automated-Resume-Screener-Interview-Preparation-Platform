@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false // This allows connections to databases with self-signed certificates
+        rejectUnauthorized: false 
       }
     }
   }
