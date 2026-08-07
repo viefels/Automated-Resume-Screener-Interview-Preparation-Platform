@@ -9,7 +9,7 @@ export default async function getCandQuestions(req, res){
         if(!existing){
             return res.status(200).json({
                 success: true,
-                error: "Job not found",
+                error: "No questions assigned by recruiter",
             });
         }
         

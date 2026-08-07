@@ -106,6 +106,11 @@ const Job = sequelize.define('Job', {
   },
   keywords: {
     type: DataTypes.JSONB,
+  },
+  jobType:{
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: 'Remote',
   }
 }, {
   timestamps: true,

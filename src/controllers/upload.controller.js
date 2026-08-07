@@ -48,7 +48,7 @@ export default async function uploadRouteCall(req, res) {
             await resume.update(candidateObj);
         }
         
-        const {feedback, keywords, id, updatedAt, userId, ...safecand} = resume.toJSON();
+        const {feedback, keywords, id, createdAt, userId, ...safecand} = resume.toJSON();
         
         return res.status(200).json({
             success: true,

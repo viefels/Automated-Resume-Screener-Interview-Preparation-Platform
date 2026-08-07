@@ -317,7 +317,6 @@ Request body:
 {
   "jobTitle": "Software Engineer",
   "companyName": "Example Inc",
-  "primarySkills": ["Node.js", "Express", "PostgreSQL"],
   "jobDescription": "Build and maintain backend services for a SaaS platform.",
   "salaryRange": {
     "min": 115000,
