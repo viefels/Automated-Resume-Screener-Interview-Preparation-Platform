@@ -38,7 +38,7 @@ export async function register(req, res){
         return res.status(500).json({
             success: false,
             message: 'Server failed to respond register new user request'
-        });
+        }); 
     }
 }
 

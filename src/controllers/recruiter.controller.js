@@ -89,7 +89,7 @@ export async function generateMockInterviewQuestions(req, res) {
     const { jobId } = req.params;
     const recruiterId = req.user.uid;
 
-    const existing = await Job.findOne({ where: { recruiterId, id: jobId } });
+    const existing = await Job.findOne({ where: { id: jobId } });
 
     if(!existing){
       return res.status(200).json({
