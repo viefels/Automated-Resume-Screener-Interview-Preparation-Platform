@@ -1,6 +1,7 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import { configDotenv } from "dotenv";
-configDotenv({ path: "../../.env" });
+import path from 'node:path';
+configDotenv({ path: path.join(import.meta.dirname, "../../.env") });
 
 
 const sequelize = new Sequelize(
