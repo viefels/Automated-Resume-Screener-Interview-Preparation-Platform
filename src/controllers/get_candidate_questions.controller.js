@@ -9,7 +9,7 @@ export default async function getCandQuestions(req, res){
         if(!existing){
             return res.status(200).json({
                 success: true,
-                error: "No questions assigned by recruiter",
+                message: "No questions assigned by recruiter",
             });
         }
         
@@ -21,7 +21,7 @@ export default async function getCandQuestions(req, res){
     catch(err){
         return res.status(500).json({ 
             success: false, 
-            error: "Server could not respond to fetch interview questions request" 
+            message: "Server could not respond to fetch interview questions request" 
         });
     }
 }

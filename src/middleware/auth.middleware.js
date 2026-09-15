@@ -20,7 +20,7 @@ export function validateUserDetails(schema){
         if(!req.body){
             return res.status(400).json({
                 success: false,
-                error: "Please provide a request"
+                message: "Please provide a request"
             });
         }
         
@@ -43,7 +43,7 @@ export function validateUserDetails(schema){
 
             return res.status(400).json({
                 success: result.success,
-                error: getNestedErrors(result.error)
+                message: getNestedErrors(result.error)
             });
             
         }
@@ -57,7 +57,7 @@ export function isAuthenticated(req, res, next){
     if(!authHeader || !authHeader.startsWith("Bearer ")){
         return res.status(401).json({
             success: false,
-            error: "Access denied. No token provided."
+            message: "Access denied. No token provided."
         });
     }
     const JWT_SECRET = process.env.JWT_SECRET;
@@ -73,7 +73,7 @@ export function isAuthenticated(req, res, next){
     catch(err){
         return res.status(401).json({
             success: false,
-            error: "Access denied. Token provided is invalid or expired."
+            message: "Access denied. Token provided is invalid or expired."
         });
     }
 
