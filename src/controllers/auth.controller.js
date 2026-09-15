@@ -15,7 +15,7 @@ export async function register(req, res){
         if(existing){
             return res.status(400).json({
                 success: false,
-                message: "Email already exists"
+                error: "Email already exists"
             });
         }
 
@@ -51,7 +51,7 @@ export async function login(req, res){
         if(!cand){
             return res.status(400).json({
                 success: false,
-                message: "Invalid email or password"
+                error: "Invalid email or password"
             });
         }
 
@@ -60,7 +60,7 @@ export async function login(req, res){
         if(!isPsw){
             return res.status(400).json({
                 success: false,
-                message: "Invalid email or password"
+                error: "Invalid email or password"
             });
         }
         const {id, hasResume} = cand;
