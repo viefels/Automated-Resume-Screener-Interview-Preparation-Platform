@@ -9,7 +9,7 @@ export default async function getScoreController(req, res){
         if(!cand){
             return res.status(404).json({
                 success: false,
-                error: "Candidate not found"
+                message: "Candidate not found"
             });
         }
 
@@ -46,7 +46,7 @@ export default async function getScoreController(req, res){
         console.log(err)
         return res.status(500).json({
             success:false,
-            error: "Server failed to respond and could not get job matches"
+            message: "Server failed to respond and could not get job matches"
         })
     }
 }

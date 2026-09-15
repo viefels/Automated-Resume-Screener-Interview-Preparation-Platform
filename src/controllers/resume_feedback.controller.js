@@ -8,7 +8,7 @@ export default async function getResumeFeedback(req, res){
         if(!candidate){
             return res.status(404).json({
                 success:false,
-                error: "Candidate resume not uploaded yet"
+                message: "Candidate resume not uploaded yet"
             });
         }
         return res.status(200).json({
@@ -19,7 +19,7 @@ export default async function getResumeFeedback(req, res){
     catch(err){
         return res.status(500).json({ 
             success: false, 
-            error: "Server failed to get resume feedback" 
+            message: "Server failed to get resume feedback" 
         });
     }
 }

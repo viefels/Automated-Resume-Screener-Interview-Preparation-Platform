@@ -11,7 +11,7 @@ export async function createRecruiterJob(req, res) {
     if (!payload || !payload.jobTitle || !payload.jobDescription) {
       return res.status(400).json({
         success: false,
-        error: "jobTitle and jobDescription are required"
+        message: "jobTitle and jobDescription are required"
       });
     }
 
@@ -48,7 +48,7 @@ export async function createRecruiterJob(req, res) {
     console.log(err)
     return res.status(500).json({ 
       success: false, 
-      error: "Failed to create recruiter job" });
+      message: "Failed to create recruiter job" });
   }
 }
 
@@ -79,7 +79,7 @@ export async function getRecruiterJob(req, res) {
   catch(err){
     return res.status(500).json({
       success: false,
-      error: "Server Error fetching recruiter jobs"
+      message: "Server Error fetching recruiter jobs"
     })
   }
 }
@@ -94,7 +94,7 @@ export async function generateMockInterviewQuestions(req, res) {
     if(!existing){
       return res.status(200).json({
         success: false,
-        error: "Job not found",
+        message: "Job not found",
       })
     }
 
@@ -105,7 +105,7 @@ export async function generateMockInterviewQuestions(req, res) {
     if (!jobDescription) {
       return res.status(400).json({ 
         success: false, 
-        error: "Job description is missing" 
+        message: "Job description is missing" 
       });
     }
 
@@ -119,7 +119,7 @@ export async function generateMockInterviewQuestions(req, res) {
   } catch (err) {
     return res.status(500).json({ 
       success: false, 
-      error: "Failed to generate interview questions" 
+      message: "Failed to generate interview questions" 
     });
   }
 }
@@ -147,7 +147,7 @@ export async function postRecruiterQuestion(req, res){
   catch(err){
     return res.status(500).json({
       success: false,
-      error: 'Server error while saving questions'
+      message: 'Server error while saving questions'
     });
   }
 }
