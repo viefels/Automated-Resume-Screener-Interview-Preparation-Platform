@@ -10,11 +10,13 @@ configDotenv({ path: "../../.env" });
 
 
 export const  userSchemaRegister = z.object({
+    fullname: z.string("Name is required").trim().min(4, "Please provide fullname with at least 4 characters"),
     email: z.email("Please enter a valid email").trim().toLowerCase(),
     password: z.string("Password is required").trim().min(8, "Password must be at least 8 characters long"),
     role: z.enum(["candidate", "recruiter"], "Please provide a valid role")
 })
-export const userSchemaLogin = userSchemaRegister.omit({ role: true });
+export const userSchemaLogin = userSchemaRegister.omit({ role: true, fullname: true });
+export const userSchemaForgotPassword = userSchemaRegister.pick({ email: true, role: true, fullname: true });
 export function validateUserDetails(schema){
     return(req, res, next) =>{
         if(!req.body){

@@ -22,6 +22,7 @@ const router = express.Router();
 //auth
 router.post("/register", user.validateUserDetails(user.userSchemaRegister), userController.register);
 router.post("/login", user.validateUserDetails(user.userSchemaLogin), userController.login);
+router.post("/forgot-password", user.validateUserDetails(user.userSchemaForgotPassword), userController.forgetPassword);
 
 //candidate
 router.put("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
