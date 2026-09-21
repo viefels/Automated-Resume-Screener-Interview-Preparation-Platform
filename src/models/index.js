@@ -28,10 +28,10 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     primaryKey: true,
   },
-  fullname:{
+  fullname: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+    defaultValue: "Unknown User"
   },
   email: {
     type: DataTypes.STRING,

@@ -24,7 +24,7 @@ app.use((err, req, res, next) => {
   next();
 });
 
-sequelize.sync().then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, HOST, ()=>{
       console.log(`Server running on http://${HOST}:${PORT}`)
   })

@@ -9,7 +9,7 @@ const JWT_SECRET_KEY = process.env.JWT_SECRET;
 
 export async function register(req, res){
     try{
-        const {email, password, role} = req.body;
+        const {email, password, role, fullname} = req.body;
             
         const existing = await User.findOne({ where: { email } });
         if(existing){
@@ -23,6 +23,7 @@ export async function register(req, res){
 
         const user = await User.create({
             id: `user-${crypto.randomUUID()}`,
+            fullname: fullname,
             email: email,
             passwordHash: hashedPsw,
             role: role,
