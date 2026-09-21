@@ -10,7 +10,7 @@ configDotenv({ path: "../../.env" });
 
 
 export const  userSchemaRegister = z.object({
-    email: z.string("Email is required").trim().email("Please enter a valid email").toLowerCase(),
+    email: z.email("Please enter a valid email").trim().toLowerCase(),
     password: z.string("Password is required").trim().min(8, "Password must be at least 8 characters long"),
     role: z.enum(["candidate", "recruiter"], "Please provide a valid role")
 })
