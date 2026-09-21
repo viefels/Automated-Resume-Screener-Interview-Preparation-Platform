@@ -1,9 +1,6 @@
-import express from "express"
-import path from "node:path"; 
 import jwt from "jsonwebtoken"
-import z, { success } from "zod";
+import z from "zod";
 import { configDotenv } from "dotenv";
-import { verify } from "node:crypto";
 configDotenv({ path: "../../.env" });
 
 
@@ -17,6 +14,7 @@ export const  userSchemaRegister = z.object({
 })
 export const userSchemaLogin = userSchemaRegister.omit({ role: true, fullname: true });
 export const userSchemaForgotPassword = userSchemaRegister.pick({ email: true, role: true, fullname: true });
+
 export function validateUserDetails(schema){
     return(req, res, next) =>{
         if(!req.body){

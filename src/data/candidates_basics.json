@@ -1,6 +1,7 @@
 [
   {
     "id": "user-ef380f59-10e4-4938-be9c-670fd96e3930",
+    "fullname": "Miguel Oliveira",
     "email": "oliveiramiguel@angel.com",
     "passwordHash": "$2b$10$BqSbjnzQI9ElWhdXWnYFde6zfmiYHxi/Fe.uUK5V.gddy99CFSfVa",
     "role": "candidate",
@@ -10,6 +11,7 @@
   },
   {
     "id": "user-0f2843df-7e52-4e93-bd14-2df71738e16a",
+    "fullname": "Miguel Oliveira 2",
     "email": "oliveiramigul@angel.com",
     "passwordHash": "$2b$10$jmQtSpbu0TbxvFqMLMgeE.YBK.Rm8eddhx1zqyNIFvryjtg6vIsu2",
     "role": "candidate",
@@ -18,6 +20,7 @@
   },
   {
     "id": "user-45ffe10b-567e-430a-8588-cf7cd809e8cb",
+    "fullname": "Miguel Oliveira 3",
     "email": "oliveiramigu@angel.com",
     "passwordHash": "$2b$10$GDjYKgvQ0yWwRczlTO2Wh.dxLkRNu4EN6FEFxGbDonOs7hCp5IFpm",
     "role": "recruiter",
