@@ -100,3 +100,32 @@ export async function login(req, res){
         });
     }
 }
+
+export async function forgetPassword(req, res){
+    try{
+        const {email} = req.body;
+        
+        const cand = await User.findOne({ where: { email } });
+        
+        if(!cand){
+            return res.status(404).json({
+                success: false,
+                message: "User with this email does not exist"
+            });
+        }
+
+        // nodemailer
+
+        return res.status(200).json({
+            success: true,
+            message: "Password reset link sent to your email"
+        })
+    } 
+    catch(err){
+        console.log(err)
+        return res.status(500).json({
+            success: false,
+            message: 'Server failed to respond to forget password request'
+        });
+    }
+}
