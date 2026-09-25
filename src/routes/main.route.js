@@ -22,10 +22,11 @@ const router = express.Router();
 //auth
 router.post("/register", user.validateUserDetails(user.userSchemaRegister), userController.register);
 router.post("/login", user.validateUserDetails(user.userSchemaLogin), userController.login);
+router.post("/verify-otp",  user.validateUserDetails(user.otpVerifySchema), userController.verifyOtp);
 router.post("/forgot-password", user.validateUserDetails(user.userSchemaForgotPassword), userController.forgetPassword);
-
+// router.post
 //candidate
-router.put("/candidate/resume", user.isAuthenticated,user.isCandidate, validateResumeData, handleForm);
+router.put("/candidate/resume", user.isAuthenticated, user.isCandidate, validateResumeData, handleForm);
 router.post("/candidate/resume/file", user.isAuthenticated, user.isCandidate, upload.single('file'), uploadRouteCall);
 router.get("/candidate/resume/feedback", user.isAuthenticated, user.isCandidate, getResumeFeedback);
 router.get("/candidate/jobs/score", user.isAuthenticated, user.isCandidate, getScoreController);
@@ -56,6 +57,7 @@ router.use((err, req, res, next) => {
         });
         
     } else if(err){
+        console.error(err)
         return res.status(500).json({
             success:false,
             nessage: "Server faild to respond"
