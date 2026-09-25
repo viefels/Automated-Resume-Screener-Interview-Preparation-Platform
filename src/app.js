@@ -6,12 +6,16 @@ import { sequelize } from "./models/index.js";
 
 configDotenv();
 
+
+
 const PORT = process.env.PORT || 5001;
 const HOST = '0.0.0.0';
 const app = express();
 
 app.use(express.json())
 app.use(cors());
+
+
 
 app.use("/api", uploadRoute)
 

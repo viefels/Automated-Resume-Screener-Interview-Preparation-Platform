@@ -12,6 +12,12 @@ export const  userSchemaRegister = z.object({
     password: z.string("Password is required").trim().min(8, "Password must be at least 8 characters long"),
     role: z.enum(["candidate", "recruiter"], "Please provide a valid role")
 })
+
+export const  otpVerifySchema = z.object({
+    email: z.email("Please enter a valid email").trim().toLowerCase(),
+    otp: z.string().trim().length(6, "OTP must be exactly 6 digits").regex(/^\d+$/, "OTP must only contain numbers")
+})
+
 export const userSchemaLogin = userSchemaRegister.omit({ role: true, fullname: true });
 export const userSchemaForgotPassword = userSchemaRegister.pick({ email: true, role: true, fullname: true });
 
